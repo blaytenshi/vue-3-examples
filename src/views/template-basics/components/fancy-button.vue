@@ -4,7 +4,7 @@
 <template>
   <button>
     <!-- This Submit text is fallback content! If nothing is provided in the slot, we will see submit instead-->
-    <slot>Submit (I'm the default if nothing is given to the slot!</slot>
+    <slot>Submit (I'm the default if nothing is given to the slot!)</slot>
   </button>
 </template>
 
