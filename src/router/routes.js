@@ -59,5 +59,11 @@ export default [
     name: "SvgImports",
     displayName: "SVG Imports",
     component: () => import("../views/SvgImports.vue")
+  },
+  {
+    path: "/template-basics",
+    name: "TemplateBasics",
+    displayName: "Template Basics",
+    component: () => import("../views/template-basics/index.vue")
   }
 ];

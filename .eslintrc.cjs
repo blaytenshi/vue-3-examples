@@ -1,7 +1,5 @@
 module.exports = {
-  env: {
-
-  },
+  root: true,
   extends: [
     'eslint:recommended',
     'plugin:vue/vue3-recommended',
