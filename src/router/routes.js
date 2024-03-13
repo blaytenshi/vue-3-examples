@@ -65,5 +65,11 @@ export default [
     name: "TemplateBasics",
     displayName: "Template Basics",
     component: () => import("../views/template-basics/index.vue")
+  },
+  {
+    path: "/pinia-example",
+    name: "PiniaExample",
+    displayName: "Pinia Example",
+    component: () => import("../views/pinia-example/index.vue")
   }
 ];
