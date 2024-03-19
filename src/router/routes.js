@@ -77,5 +77,11 @@ export default [
     name: "FilerList",
     displayName: "Filter List",
     component: () => import("../views/filter-list/index.vue")
+  },
+  {
+    path: "/basic-inputs",
+    name: "BasicInputs",
+    displayName: "Basic Inputs",
+    component: () => import("../views/basic-inputs/index.vue")
   }
 ];

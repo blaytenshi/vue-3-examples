@@ -4,12 +4,15 @@
   <p>
     The &lt;CustomComponent /&gt; will still accept the 'v-model' directive.
   </p>
-  <CustomInput inputLabel="My Custom Input" v-model="customInputData" />
+  <CustomInput
+    v-model="customInputData"
+    input-label="My Custom Input"
+  />
   <p>The value of customInputData: {{ customInputData }}</p>
 </template>
 
 <script>
-import CustomInput from "../components/CustomInput";
+import CustomInput from "../components/CustomInput.vue";
 
 export default {
   name: "Vue3VModelCustomElementsPage",
