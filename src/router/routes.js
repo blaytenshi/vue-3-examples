@@ -71,5 +71,11 @@ export default [
     name: "PiniaExample",
     displayName: "Pinia Example",
     component: () => import("../views/pinia-example/index.vue")
+  },
+  {
+    path: "/filter-list",
+    name: "FilerList",
+    displayName: "Filter List",
+    component: () => import("../views/filter-list/index.vue")
   }
 ];
