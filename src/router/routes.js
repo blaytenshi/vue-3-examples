@@ -83,5 +83,17 @@ export default [
     name: "BasicInputs",
     displayName: "Basic Inputs",
     component: () => import("../views/basic-inputs/index.vue")
+  },
+  {
+    path: "/computed-edge-cases",
+    name: "ComputedEdgeCases",
+    displayName: "Computed Edge Cases",
+    component: () => import("../views/computed-edge-cases/index.vue")
+  },
+  {
+    path: "/local-list-searching",
+    name: "LocalListSearching",
+    displayName: "Local List Searching",
+    component: () => import("../views/local-list-searching/index.vue")
   }
 ];
