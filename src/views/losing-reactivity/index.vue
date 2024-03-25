@@ -1,5 +1,5 @@
 <script setup>
-import CourseList from "./CourseList.vue";
+import CourseList from "./course-list.vue";
 import { reactive } from "vue";
 
 defineOptions({
