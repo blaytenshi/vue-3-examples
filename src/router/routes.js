@@ -95,5 +95,11 @@ export default [
     name: "LocalListSearching",
     displayName: "Local List Searching",
     component: () => import("../views/local-list-searching/index.vue")
+  },
+  {
+    path: "/losing-reactivity",
+    name: "LosingReactivity",
+    displayName: "Losing Reactivity",
+    component: () => import("../views/losing-reactivity/index.vue")
   }
 ];

@@ -1,23 +1,31 @@
-<script>
-export default {
-  data() {
-    return {
-      userList: [
-        { label: 'Jimmy Tang' },
-        { label: 'Shirley Lui' },
-        { label: 'Ben Franzi' },
-        { label: 'Danny Lai' }
-      ],
-      searchValue: '',
-      filteredUserList: []
-    }
-  },
-  methods: {
-    handleSearchChange(event) {
-      this.searchValue = event.target.value;
+<script setup>
+import LocalListSearch from "./local-list-search.vue";
+import { fetchProfiles } from "../../api/index.js";
+import { reactive } from "vue";
 
-      this.filteredUserList = this.userList.filter(({ label }) => label.toLowerCase().includes(this.searchValue.toLowerCase()));
-    }
+const state = reactive({
+  filteredUserList: [],
+  userList: [],
+})
+
+const getUsers = async () => {
+  const data = await fetchProfiles(); // simualted service layer API call
+  console.log('data', data);
+  state.userList = data.map(({ firstName, lastName }) => ({ label: `${firstName} ${lastName}`}));;
+  state.filteredUserList = state.userList;
+}
+
+getUsers();
+
+function handleSearchChange(event) {
+  state.searchValue = event.target.value;
+
+  console.log('searchValue', state.searchValue);
+
+  if (state.searchValue !== '') {
+    state.filteredUserList = state.userList.filter(({ label }) => label.toLowerCase().includes(state.searchValue.toLowerCase()));
+  } else {
+    state.filteredUserList = state.userList;
   }
 }
 </script>
@@ -25,25 +33,12 @@ export default {
 <template>
   <h1>Local List Searching</h1>
   <p>
-    If we have a userList in data that is fetched asynchronously and then calculated with a computed property,
-    should it reactively rerender when the computed property is passed to an inner component? Short answer, yes.
+    This is how a local list search should be implemented in the simplest of ways. The searching function should be
+    handled at the top layer and passed down into the LocalListSearch component.
   </p>
-  <label for="nameSearch">Name Search</label>
-  <input
-    v-bind="{
-      id: 'nameSearch',
-      name: 'nameSearch',
-      type: 'text',
-    }"
-    @input="handleSearchChange"
-  >
-  <p>Search Value: {{ searchValue }}</p>
-  <ul>
-    <li
-      v-for="user in filteredUserList"
-      :key="user.label"
-    >
-      {{ user.label }}
-    </li>
-  </ul>
+  <p>Available UserList: {{ state.userList }}</p>
+  <LocalListSearch
+    :user-list="state.filteredUserList"
+    :on-search-change="handleSearchChange"
+  />
 </template>
