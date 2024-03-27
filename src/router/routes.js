@@ -101,5 +101,11 @@ export default [
     name: "LosingReactivity",
     displayName: "Losing Reactivity",
     component: () => import("../views/losing-reactivity/index.vue")
-  }
+  },
+  {
+    path: "/reactivity-fundamentals",
+    name: "Reactivity Fundamentals",
+    displayName: "Reactivity Fundamentals",
+    component: () => import("../views/vue-reactivity-fundamentals/index.vue")
+  },
 ];
