@@ -3,11 +3,11 @@ import { func } from "vue-types";
 
 defineOptions({
   name: "CloseButton",
-})
+});
 
 defineProps({
   handleClose: func(),
-})
+});
 </script>
 
 <template>

@@ -1,5 +1,5 @@
 <script setup>
-const greetingMessage = "Howdy Pardner"
+const greetingMessage = "Howdy Pardner";
 </script>
 
 <template>

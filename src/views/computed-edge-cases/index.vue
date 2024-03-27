@@ -1,5 +1,5 @@
 <script>
-import {fetchProfiles} from "../../api/index.js";
+import { fetchProfiles } from "../../api/index.js";
 import InnerComponent from "./inner-component.vue";
 
 export default {
@@ -7,26 +7,26 @@ export default {
   data() {
     return {
       userList: []
-    }
+    };
   },
   computed: {
     formattedUserList() {
       return [
         {
-          firstName: 'Ben',
-          lastName: 'Franzi',
+          firstName: "Ben",
+          lastName: "Franzi",
         },
         ...this.userList.map(({ firstName, lastName }) => ({
           firstName,
           lastName
         }))
-      ]
+      ];
     }
   },
   async mounted() {
     this.userList = await fetchProfiles();
   }
-}
+};
 </script>
 
 <template>

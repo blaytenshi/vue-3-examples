@@ -37,7 +37,7 @@ const { incrementCount, decrementCount, resetCount } = counterStore;
 <script>
 export default {
   name: "PiniaExample",
-}
+};
 </script>
 
 <style scoped>

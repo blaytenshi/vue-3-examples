@@ -10,9 +10,11 @@
     update the value in data(), it will also update the value in the input
     field.
   </p>
-  <input v-model="inputValue" />
+  <input v-model="inputValue">
   <div>Value of `inputValue`: {{ inputValue }}</div>
-  <button @click="updateData">Change Value</button>
+  <button @click="updateData">
+    Change Value
+  </button>
 </template>
 
 <script>

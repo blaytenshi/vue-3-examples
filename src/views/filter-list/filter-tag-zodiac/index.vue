@@ -4,13 +4,13 @@ import CloseButton from "../../../components/CloseButton.vue";
 
 defineOptions({
   name: "FilterTagZodiac"
-})
+});
 
 defineProps({
   label: string(),
   type: string(),
   handleDeleteTag: func(),
-})
+});
 </script>
 
 <template>

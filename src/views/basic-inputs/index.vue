@@ -3,34 +3,34 @@ import { reactive } from "vue";
 
 defineOptions({
   name: "BasicInputsExample"
-})
+});
 
 const data = reactive({
   inputValue: "",
   radioValue: "",
   checkedBoxesValue: [],
-})
+});
 
 const handleInput = (event) => {
-  console.log('handleInput', event.target.value);
+  console.log("handleInput", event.target.value);
   data.inputValue = event.target.value;
-}
+};
 
 const handleRadioInput = (event) => {
   const { name, value } = event.target;
-  console.log('handleRadioInput', name, value);
-  data.radioValue = value
-}
+  console.log("handleRadioInput", name, value);
+  data.radioValue = value;
+};
 
 const handleFillForm = () => {
   data.inputValue = "Jimmy!";
   data.radioValue = "green";
   data.checkedBoxesValue = ["apple", "banana", "blueberry"];
-}
+};
 
 const handleCheckboxInput = (event) => {
   data.checkedBoxesValue.push(event.target.value);
-}
+};
 </script>
 
 <template>

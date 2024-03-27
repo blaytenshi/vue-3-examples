@@ -9,6 +9,9 @@ import VBindGrandChild from "../components/VBindGrandChild";
 
 export default {
   name: "VbindChildComponent",
+  components: {
+    VBindGrandChild,
+  },
   props: {
     myCustomProp: String,
   },
@@ -16,9 +19,6 @@ export default {
     myProps() {
       return this.$props;
     },
-  },
-  components: {
-    VBindGrandChild,
   },
 };
 </script>

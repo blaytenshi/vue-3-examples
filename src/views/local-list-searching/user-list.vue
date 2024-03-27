@@ -3,7 +3,7 @@ import { array } from "vue-types";
 
 defineProps({
   userList: array()
-})
+});
 </script>
 
 <template>

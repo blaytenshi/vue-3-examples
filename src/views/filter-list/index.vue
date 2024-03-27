@@ -1,13 +1,13 @@
 <script setup>
-import FilterBar from './filter-bar/index.vue';
+import FilterBar from "./filter-bar/index.vue";
 import { reactive } from "vue";
 // import excludeIndexFromArray from "../../utils/exclude-index-from-array.js";
 
 const handleDeleteTag = (index) => {
-  console.log(index)
+  console.log(index);
 
   filterList.splice(index, 1);
-}
+};
 
 const addFilter = (value) => {
   console.log(`val ${value}`);
@@ -16,8 +16,8 @@ const addFilter = (value) => {
     type: "NAME",
     label: "Name",
     handleDeleteTag,
-  })
-}
+  });
+};
 
 const filterList = reactive([
   {

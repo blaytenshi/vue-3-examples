@@ -5,8 +5,8 @@ import { computed } from "vue";
 import TwoColumnLayout from "./components/two-column-layout.vue";
 import SingleColumnLayout from "./components/single-column-layout.vue";
 
-const four = 'Four';
-const dynamicSlotName = computed(() => `column${four}`)
+const four = "Four";
+const dynamicSlotName = computed(() => `column${four}`);
 </script>
 
 <template>

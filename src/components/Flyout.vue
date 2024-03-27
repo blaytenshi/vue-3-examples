@@ -1,7 +1,7 @@
 <script setup>
 defineOptions({
-  name: 'FlyoutComponent',
-})
+  name: "FlyoutComponent",
+});
 </script>
 
 <template>

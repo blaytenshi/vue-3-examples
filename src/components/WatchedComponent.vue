@@ -11,9 +11,6 @@ export default {
     secondWatchedValue: String,
     thirdWatchedValue: String,
   },
-  created() {
-    console.log("watchedValue", this.watchedValue);
-  },
   watch: {
     watchedValue: {
       handler(value, oldValue) {
@@ -37,6 +34,9 @@ export default {
       },
       immediate: true,
     },
+  },
+  created() {
+    console.log("watchedValue", this.watchedValue);
   },
 };
 </script>

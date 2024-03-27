@@ -10,7 +10,9 @@
     clicking on the button below will change the watchedValue in data() to
     "blahBlah"
   </p>
-  <button @click="handleClick">Change!</button>
+  <button @click="handleClick">
+    Change!
+  </button>
 </template>
 
 <script>
@@ -19,16 +21,16 @@ import WatchedComponentVue3 from "../components/WatchedComponentVue3";
 
 export default {
   name: "WatchersExample",
+  components: {
+    WatchedComponent,
+    WatchedComponentVue3,
+  },
   data() {
     return {
       watchedValue: "blah",
       secondWatchedValue: "blah2",
       thirdWatchedValue: "blah3",
     };
-  },
-  components: {
-    WatchedComponent,
-    WatchedComponentVue3,
   },
   methods: {
     handleClick() {

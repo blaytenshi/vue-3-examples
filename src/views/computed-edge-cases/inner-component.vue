@@ -4,11 +4,11 @@ export default {
     userList: {
       type: Array,
       default() {
-        return []
+        return [];
       }
     },
   }
-}
+};
 </script>
 
 <template>

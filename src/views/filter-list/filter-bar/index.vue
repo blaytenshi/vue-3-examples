@@ -4,11 +4,11 @@ import Name from "../filter-tag-name/index.vue";
 import Year from "../filter-tag-year/index.vue";
 import Zodiac from "../filter-tag-zodiac/index.vue";
 import { computed } from "vue";
-import Flyout from '../../../components/Flyout.vue';
+import Flyout from "../../../components/Flyout.vue";
 
 defineOptions({
   name: "FilterBar"
-})
+});
 
 const props = defineProps({
   filterList: arrayOf(
@@ -19,27 +19,25 @@ const props = defineProps({
     })
   ),
   addFilter: func(),
-})
+});
 
-console.log('props', props);
+console.log("props", props);
 
 const modifiedFilterList = computed(() => {
-  const modified = props.filterList.map(({ handleDeleteTag, ...filterProps }, index) => {
-    return {
-      ...filterProps,
-      handleDeleteTag: () => handleDeleteTag(index),
-    }
-  })
+  const modified = props.filterList.map(({ handleDeleteTag, ...filterProps }, index) => ({
+    ...filterProps,
+    handleDeleteTag: () => handleDeleteTag(index),
+  }));
 
-  console.log('modified', modified);
+  console.log("modified", modified);
   return modified;
-})
+});
 
 const FILTER_TYPES = {
   "NAME": Name,
   "YEAR": Year,
   "ZODIAC": Zodiac,
-}
+};
 </script>
 
 <template>

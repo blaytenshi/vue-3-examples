@@ -1,6 +1,8 @@
 <template>
   <h1>RxJS example</h1>
-  <button :onClick="handleClick">Event Please!</button>
+  <button :onClick="handleClick">
+    Event Please!
+  </button>
 </template>
 
 <script>

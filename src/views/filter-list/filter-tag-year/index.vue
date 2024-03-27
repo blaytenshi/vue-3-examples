@@ -4,13 +4,13 @@ import CloseButton from "../../../components/CloseButton.vue";
 
 defineOptions({
   name: "FilterTagYear"
-})
+});
 
 defineProps({
   label: string(),
   type: string(),
   handleDeleteTag: func(),
-})
+});
 </script>
 
 <template>

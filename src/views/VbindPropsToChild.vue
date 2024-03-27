@@ -12,15 +12,15 @@ import VBindChild from "../components/VBindChild";
 
 export default {
   name: "VbindPropsToChild",
+  components: {
+    VBindChild,
+  },
   data() {
     return {
       specialProps: {
         myCustomProp: "myCustomValue",
       },
     };
-  },
-  components: {
-    VBindChild,
   },
 };
 </script>

@@ -6,23 +6,23 @@ import { reactive } from "vue";
 const state = reactive({
   filteredUserList: [],
   userList: [],
-})
+});
 
 const getUsers = async () => {
   const data = await fetchProfiles(); // simualted service layer API call
-  console.log('data', data);
-  state.userList = data.map(({ firstName, lastName }) => ({ label: `${firstName} ${lastName}`}));;
+  console.log("data", data);
+  state.userList = data.map(({ firstName, lastName }) => ({ label: `${firstName} ${lastName}` }));
   state.filteredUserList = state.userList;
-}
+};
 
 getUsers();
 
 function handleSearchChange(event) {
   state.searchValue = event.target.value;
 
-  console.log('searchValue', state.searchValue);
+  console.log("searchValue", state.searchValue);
 
-  if (state.searchValue !== '') {
+  if (state.searchValue !== "") {
     state.filteredUserList = state.userList.filter(({ label }) => label.toLowerCase().includes(state.searchValue.toLowerCase()));
   } else {
     state.filteredUserList = state.userList;
