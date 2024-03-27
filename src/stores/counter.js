@@ -2,9 +2,9 @@ import { defineStore } from "pinia";
 
 const counterStoreInitialState = {
   currentCount: 0
-}
+};
 
-export const useCounterStore = defineStore('counter', {
+export const useCounterStore = defineStore("counter", {
   state: () => counterStoreInitialState,
   actions: {
     // keep action functions to regular functions because if we use arrow functions we'll lose reference to 'this'
@@ -18,4 +18,4 @@ export const useCounterStore = defineStore('counter', {
       this.state = counterStoreInitialState;
     }
   }
-})
+});

@@ -1,3 +1,4 @@
+/* eslint-disable */
 // jest tests are built into codesandbox,
 // no need to add jest as a dependency
 import sum from "./sum";

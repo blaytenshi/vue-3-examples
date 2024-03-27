@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "lint-fix": "npx eslint ./ --fix",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -16,6 +17,7 @@
     "vue-types": "^5.1.1"
   },
   "devDependencies": {
+    "@stylistic/eslint-plugin": "^1.7.0",
     "@vitejs/plugin-vue": "^5.0.4",
     "eslint": "^8.57.0",
     "eslint-plugin-vue": "^9.22.0",

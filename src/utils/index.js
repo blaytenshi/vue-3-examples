@@ -1,5 +1,5 @@
-import excludeIndexFromArray from './exclude-index-from-array.js';
+import excludeIndexFromArray from "./exclude-index-from-array.js";
 
 export default {
   excludeIndexFromArray,
-}
+};

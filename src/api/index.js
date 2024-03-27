@@ -4,9 +4,9 @@ const profiles = [
 ];
 
 export const fetchProfiles = () => {
-  return new Promise((res, rej) => {
+  return new Promise((resolve) => {
     setTimeout(() => {
-      res(profiles);
+      resolve(profiles);
     }, 1000);
   });
 };
