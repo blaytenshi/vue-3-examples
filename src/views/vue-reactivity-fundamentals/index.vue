@@ -1,6 +1,6 @@
 <script>
 import AllAboutRefs from "./all-about-refs.vue";
-// import UsingSetupInScript from "./using-setup-in-script.vue";
+import UsingSetupInScript from "./using-setup-in-script.vue";
 // import AllAboutReactive from "./all-about-reactive.vue";
 // import RealRefReactiveExample from "./real-ref-reactive-example.vue";
 
@@ -10,8 +10,8 @@ export default {
     // RealRefReactiveExample,
     AllAboutRefs,
     // AllAboutReactive,
-    // UsingSetupInScript,
-  }
+    UsingSetupInScript,
+  },
 };
 </script>
 
@@ -23,7 +23,7 @@ export default {
     update the page in an optimal way to reflect these changes, that is, tells the page/component to re-render.
   </p>
   <AllAboutRefs />
-<!--  <UsingSetupInScript />-->
+  <UsingSetupInScript />
 <!--  <AllAboutReactive />-->
 <!--  <RealRefReactiveExample />-->
 </template>

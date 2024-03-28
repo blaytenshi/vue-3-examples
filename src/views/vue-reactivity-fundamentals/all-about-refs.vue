@@ -7,6 +7,8 @@ export default {
     // returns a Reactive object such that when you change the .value of the Reactive object, it will cause the page
     // to refresh.
     const myRefdValue = ref("refd value");
+    // while you may need the .value to update or access a ref()'d value in javascript. You don't need to do this when
+    // rendering the value to the template as it is automatically unwrapped for you
     let myUnrefdValue = "unrefd value";
 
     // you can change the value of the Reactive object in the setup function before you return it...
@@ -42,10 +44,10 @@ export default {
       // will throw error in console saying this.myRefdValue.value is undefined.
       this.myUnrefdValue = "third update to unrefd value";
       this.myRefdValue.value = "third update to refd value";
-      console.log("anotherNonReactiveUpdate myUnrefdValue", this.myUnrefdValue); 
+      console.log("anotherNonReactiveUpdate myUnrefdValue", this.myUnrefdValue);
       console.log("anotherNonReactiveUpdate myRefdValue", this.myRefdValue);
-    }
-  }
+    },
+  },
 };
 </script>
 

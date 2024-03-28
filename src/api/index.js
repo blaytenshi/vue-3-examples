@@ -3,10 +3,8 @@ const profiles = [
   { firstName: "Jimmy", lastName: "Tang", email: "jimmyt@gmail.com" }
 ];
 
-export const fetchProfiles = () => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(profiles);
-    }, 1000);
-  });
-};
+export const fetchProfiles = () => new Promise((resolve) => {
+  setTimeout(() => {
+    resolve(profiles);
+  }, 1000);
+});

@@ -9,7 +9,7 @@ defineOptions({
 // This is all fine and well! The reactive() wraps an object making the object and everything inside of it reactive!
 const course = reactive({
   courseId: "1234",
-  students: ["Jimmy", "Shirley", "Danny"]
+  students: ["Jimmy", "Shirley", "Danny"],
 });
 
 // This is still fine! This function just updates the reactive property in a reactive object!
