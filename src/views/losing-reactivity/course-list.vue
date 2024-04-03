@@ -7,7 +7,7 @@ const props = defineProps({
   course: shape({
     courseId: string().def("1234"),
     students: arrayOf(string()),
-  })
+  }),
 });
 
 // !!! This here is the problem !!!
