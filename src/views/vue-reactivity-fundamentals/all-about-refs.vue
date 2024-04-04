@@ -52,7 +52,7 @@ export default {
 </script>
 
 <template>
-  <h1>All About Refs</h1>
+  <h2>All About Refs</h2>
   <p>Unrefd value: {{ myUnrefdValue }}</p>
   <p>Refd value: {{ myRefdValue }}</p>
   <button @click="updateRefs">

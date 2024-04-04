@@ -2,12 +2,12 @@
 import AllAboutRefs from "./all-about-refs.vue";
 import UsingSetupInScript from "./using-setup-in-script.vue";
 import AllAboutReactive from "./all-about-reactive.vue";
-// import RealRefReactiveExample from "./real-ref-reactive-example.vue";
+import RealRefReactiveExample from "./real-ref-reactive-example.vue";
 
 export default {
   name: "VueReactivityFundamentals",
   components: {
-    // RealRefReactiveExample,
+    RealRefReactiveExample,
     AllAboutRefs,
     AllAboutReactive,
     UsingSetupInScript,
@@ -25,7 +25,7 @@ export default {
   <AllAboutRefs />
   <UsingSetupInScript />
   <AllAboutReactive />
-<!--  <RealRefReactiveExample />-->
+  <RealRefReactiveExample />
 </template>
 
 <style scoped>
