@@ -2,7 +2,7 @@
 import { reactive } from "vue";
 
 defineOptions({
-  name: "BasicInputsExample"
+  name: "BasicInputsExample",
 });
 
 const data = reactive({
@@ -29,7 +29,13 @@ const handleFillForm = () => {
 };
 
 const handleCheckboxInput = (event) => {
-  data.checkedBoxesValue.push(event.target.value);
+  const hasEmittedValue = data.checkedBoxesValue.includes(event.target.value);
+  if (hasEmittedValue) {
+    data.checkedBoxesValue = data.checkedBoxesValue.filter(checkboxValue => checkboxValue !== event.target.value);
+  } else {
+    data.checkedBoxesValue.push(event.target.value);
+  }
+  console.log(data.checkedBoxesValue);
 };
 </script>
 
@@ -89,23 +95,23 @@ const handleCheckboxInput = (event) => {
     >
     <label for="apple">Apple</label>
     <input
-      id="apple"
+      id="banana"
       type="checkbox"
       name="fruits"
       value="banana"
       :checked="data.checkedBoxesValue.includes('banana')"
       @change="handleCheckboxInput"
     >
-    <label for="apple">Banana</label>
+    <label for="banana">Banana</label>
     <input
-      id="apple"
+      id="blueberry"
       type="checkbox"
       name="fruits"
       value="blueberry"
       :checked="data.checkedBoxesValue.includes('blueberry')"
       @change="handleCheckboxInput"
     >
-    <label for="apple">Blueberry</label>
+    <label for="blueberry">Blueberry</label>
   </div>
   <div>
     <button @click="handleFillForm">
