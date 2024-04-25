@@ -22,13 +22,13 @@ export default [
     path: "/vue-3-vmodel-native-elements",
     name: "Vue3VModelNativeElements",
     displayName: "Vue 3 V-Model Native Inputs",
-    component: () => import("../views/Vue3VModelNativeElements.vue"),
+    component: () => import("../views/basic-vmodel/index.vue"),
   },
   {
     path: "/vue-3-vmodel-custom-elements",
     name: "Vue3VModelCustomElements",
     displayName: "Vue 3 V-Model Custom Elements",
-    component: () => import("../views/Vue3VModelCustomElements.vue"),
+    component: () => import("../views/custom-element-vmodel/index.vue"),
   },
   {
     path: "/composition-api-basics",
@@ -104,14 +104,20 @@ export default [
   },
   {
     path: "/reactivity-fundamentals",
-    name: "Reactivity Fundamentals",
+    name: "ReactivityFundamentals",
     displayName: "Reactivity Fundamentals",
     component: () => import("../views/vue-reactivity-fundamentals/index.vue"),
   },
   {
     path: "/query-params",
-    name: "Query Params",
+    name: "QueryParams",
     displayName: "Query Params",
     component: () => import("../views/query-params/index.vue"),
+  },
+  {
+    path: "/basic-forms-validation",
+    name: "BasicFormsValidation",
+    displayName: "Basic Forms Validation",
+    component: () => import("../views/basic-forms-validation/index.vue"),
   },
 ];

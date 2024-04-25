@@ -2,7 +2,8 @@
   <h1>Vue 3 V-Model Custom Elements</h1>
   <p>In Vue 3, v-model for Custom Elements work differently now.</p>
   <p>
-    The &lt;CustomComponent /&gt; will still accept the 'v-model' directive.
+    The &lt;CustomInput /&gt; will still accept the 'v-model' directive. It will simply be mapped
+    to the 'modelValue' prop inside the CustomComponent. See inside CustomInput.vue to see!
   </p>
   <CustomInput
     v-model="customInputData"
@@ -12,7 +13,7 @@
 </template>
 
 <script>
-import CustomInput from "../components/CustomInput.vue";
+import CustomInput from "./custom-input.vue";
 
 export default {
   name: "Vue3VModelCustomElementsPage",
