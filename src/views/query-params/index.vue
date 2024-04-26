@@ -5,12 +5,10 @@ import { reactive } from "vue";
 const route = useRoute();
 const router = useRouter();
 
-console.log(route.query);
-
 const filterState = reactive({
-  count: +route.query.count || 0, // unary operator
+  count: +route.query.count ?? 0, // unary operator
   userName: route.query.user_name,
-  colours: route.query.colours || [],
+  colours: route.query.colours ?? [],
 });
 
 function handleCountUpdate() {
@@ -26,13 +24,16 @@ function handleUserNameUpdate(event) {
 }
 
 function handleColorChange(event) {
-  const hasEmittedValue = filterState.colours.includes(event.target.value);
+  const { value: colour } = event.target;
+
+  const hasEmittedValue = filterState.colours.includes(colour);
   if (hasEmittedValue) {
-    filterState.colours = filterState.colours.filter(checkboxValue => checkboxValue !== event.target.value);
+    filterState.colours = filterState.colours.filter(checkboxValue => checkboxValue !== colour);
   } else {
-    filterState.colours.push(event.target.value);
+    // this needs a new array and not a simple push() because reactive() does not detect
+    // changes in the array but can detect whole new value assignment
+    filterState.colours = [ ...filterState.colours, colour ];
   }
-  console.log(filterState.colours);
   updateQueryParams("colours", filterState.colours);
 }
 
@@ -46,11 +47,15 @@ function updateQueryParams(queryParam, updatedValue) {
 }
 
 function navigate() {
+  const myObject = {
+    hello: "2ae8b54a-6dcc-42bb-9b6a-ec0480e80dfa",
+  };
   // UI doesn't update when we try to nagivate...
   router.push({
     path: "/query-params",
     query: {
       colours: ["blue", "red"],
+      myObject,
     },
   });
 }
