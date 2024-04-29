@@ -120,4 +120,10 @@ export default [
     displayName: "Basic Forms Validation",
     component: () => import("../views/basic-forms-validation/index.vue"),
   },
+  {
+    path: "/sticky-element",
+    name: "StickyElement",
+    displayName: "Sticky Element",
+    component: () => import("../views/sticky-element/index.vue"),
+  },
 ];
