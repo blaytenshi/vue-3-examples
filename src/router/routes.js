@@ -126,4 +126,10 @@ export default [
     displayName: "Sticky Element",
     component: () => import("../views/sticky-element/index.vue"),
   },
+  {
+    path: "/debounced-requests",
+    name: "DebouncedRequests",
+    displayName: "DebouncedRequests",
+    component: () => import("../views/debounced-requests/index.vue"),
+  },
 ];
