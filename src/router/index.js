@@ -13,8 +13,8 @@ const router = createRouter({
     console.log(routes);
     return routes;
   }),
-  parseQuery: (query) => qs.parse(query, { comma: true }),
-  stringifyQuery: (query) => qs.stringify(query, { encode: false, arrayFormat: "comma" }),
+  parseQuery: (query) => qs.parse(query, { allowEmptyArrays: true }),
+  stringifyQuery: (query) => qs.stringify(query, { arrayFormat: "brackets", encodeValuesOnly: true, allowEmptyArrays: true }),
 });
 
 export default router;
