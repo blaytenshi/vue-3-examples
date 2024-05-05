@@ -121,6 +121,12 @@ export default [
     component: () => import("../views/basic-forms-validation/index.vue"),
   },
   {
+    path: "/paginated-table",
+    name: "PaginatedTable",
+    displayName: "Paginated Table",
+    component: () => import("../views/paginated-table/index.vue"),
+  },
+  {
     path: "/sticky-element",
     name: "StickyElement",
     displayName: "Sticky Element",

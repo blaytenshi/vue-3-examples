@@ -1,0 +1,14 @@
+{
+  "tables": {
+    "products": {
+      "columnHeaders": {
+        "id": "Product Id",
+        "name": "Product Name",
+        "brand": "Brand Name",
+        "qty": "Quantity",
+        "price": "Price",
+        "category": "Category"
+      }
+    }
+  }
+}
