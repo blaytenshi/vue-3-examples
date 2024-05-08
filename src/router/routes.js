@@ -138,4 +138,10 @@ export default [
     displayName: "DebouncedRequests",
     component: () => import("../views/debounced-requests/index.vue"),
   },
+  {
+    path: "/axios-get-params",
+    name: "AxiosGetParams",
+    displayName: "Axios Get Params",
+    component: () => import("../views/axios-get-params/index.vue"),
+  },
 ];
