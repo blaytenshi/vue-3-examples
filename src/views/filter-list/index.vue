@@ -34,7 +34,7 @@ const filterList = reactive([
     type: "ZODIAC",
     label: "Zodiac",
     handleDeleteTag,
-  }
+  },
 ]);
 
 </script>

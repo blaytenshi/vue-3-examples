@@ -1,0 +1,16 @@
+{
+  "base": {
+    "colour": {
+      "red-500": "#B22222",
+      "blue-500": "#1E90FF",
+      "green-500": "#228B22",
+      "orange-500": "#FFA500",
+      "purple-500": "#8A2BE2",
+      "white-500": "#FFFAF0",
+      "black-500": "#2C2C2C"
+    }
+  },
+  "brand-a": {
+
+  }
+}

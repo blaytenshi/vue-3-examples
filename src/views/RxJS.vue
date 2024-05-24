@@ -20,7 +20,7 @@ export default {
             console.log("value", value);
 
             return value + 1;
-          })
+          }),
         )
         .subscribe({
           next(data) {

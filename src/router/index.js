@@ -10,7 +10,7 @@ const router = createRouter({
   routes: routes.map((route) => {
     const routes = pick(route, routeProperties);
 
-    console.log(routes);
+    // console.log(routes);
     return routes;
   }),
   parseQuery: (query) => qs.parse(query, { allowEmptyArrays: true }),

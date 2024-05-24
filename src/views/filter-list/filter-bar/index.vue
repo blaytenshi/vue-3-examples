@@ -7,7 +7,7 @@ import { computed } from "vue";
 import Flyout from "../../../components/Flyout.vue";
 
 defineOptions({
-  name: "FilterBar"
+  name: "FilterBar",
 });
 
 const props = defineProps({
@@ -16,7 +16,7 @@ const props = defineProps({
       type: string(),
       label: string(),
       handleDeleteTag: func(),
-    })
+    }),
   ),
   addFilter: func(),
 });

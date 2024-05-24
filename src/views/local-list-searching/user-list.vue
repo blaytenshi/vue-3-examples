@@ -2,7 +2,7 @@
 import { array } from "vue-types";
 
 defineProps({
-  userList: array()
+  userList: array(),
 });
 </script>
 

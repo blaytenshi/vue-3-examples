@@ -3,7 +3,7 @@ import { func, string } from "vue-types";
 import CloseButton from "../../../components/CloseButton.vue";
 
 defineOptions({
-  name: "FilterTagName"
+  name: "FilterTagName",
 });
 
 defineProps({
