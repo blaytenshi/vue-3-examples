@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import VBindChild from "../components/VBindChild";
+import VBindChild from "../components/VBindChild.vue";
 
 export default {
   name: "VbindPropsToChild",

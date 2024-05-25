@@ -19,7 +19,7 @@ export default {
   },
   setup(props) {
     const { watchedValue, secondWatchedValue, thirdWatchedValue } = toRefs(
-      props
+      props,
     );
 
     watch(
@@ -29,7 +29,7 @@ export default {
       },
       {
         immediate: true,
-      }
+      },
     );
 
     watch(
@@ -39,7 +39,7 @@ export default {
       },
       {
         immediate: true,
-      }
+      },
     );
 
     // use watchEffect if you wanna watch everything that changes

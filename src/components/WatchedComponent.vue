@@ -21,7 +21,7 @@ export default {
     secondWatchedValue: {
       handler(value, oldValue) {
         console.log(
-          `secondWatchedValue oldValue: ${oldValue}, newValue: ${value}`
+          `secondWatchedValue oldValue: ${oldValue}, newValue: ${value}`,
         );
       },
       immediate: true,
@@ -29,7 +29,7 @@ export default {
     thirdWatchedValue: {
       handler(value, oldValue) {
         console.log(
-          `thirdWatchedValue oldValue: ${oldValue}, newValue: ${value}`
+          `thirdWatchedValue oldValue: ${oldValue}, newValue: ${value}`,
         );
       },
       immediate: true,

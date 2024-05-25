@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import WatchedComponent from "../components/WatchedComponent";
-import WatchedComponentVue3 from "../components/WatchedComponentVue3";
+import WatchedComponent from "../components/WatchedComponent.vue";
+import WatchedComponentVue3 from "../components/WatchedComponentVue3.vue";
 
 export default {
   name: "WatchersExample",

@@ -7,9 +7,12 @@
     "dev": "vite",
     "eslint-fix": "eslint ./ --ext .vue --ext .js --fix",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:dev": "vitest run --coverage",
+    "test:html-report": "vitest run --coverage && vite preview --outDir test-reports"
   },
   "dependencies": {
+    "@vitest/ui": "^1.6.0",
     "axios": "^1.6.8",
     "pinia": "^2.1.7",
     "qs": "^6.12.1",
@@ -22,8 +25,10 @@
   "devDependencies": {
     "@stylistic/eslint-plugin": "^1.7.0",
     "@vitejs/plugin-vue": "^5.0.4",
+    "@vitest/coverage-istanbul": "^1.6.0",
     "eslint": "^8.57.0",
     "eslint-plugin-vue": "^9.22.0",
-    "vite": "^5.1.4"
+    "vite": "^5.1.4",
+    "vitest": "^1.6.0"
   }
 }
