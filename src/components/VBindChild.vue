@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import VBindGrandChild from "../components/VBindGrandChild";
+import VBindGrandChild from "./VBindGrandChild.vue";
 
 export default {
   name: "VbindChildComponent",

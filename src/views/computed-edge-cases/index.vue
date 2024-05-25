@@ -6,7 +6,7 @@ export default {
   components: { InnerComponent },
   data() {
     return {
-      userList: []
+      userList: [],
     };
   },
   computed: {
@@ -18,14 +18,14 @@ export default {
         },
         ...this.userList.map(({ firstName, lastName }) => ({
           firstName,
-          lastName
-        }))
+          lastName,
+        })),
       ];
-    }
+    },
   },
   async mounted() {
     this.userList = await fetchProfiles();
-  }
+  },
 };
 </script>
 
