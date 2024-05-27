@@ -3,7 +3,7 @@ import routes from "./routes";
 import pick from "lodash/pick";
 import qs from "qs";
 
-const routeProperties = ["path", "name", "component"];
+const routeProperties = ["path", "name", "props", "component"];
 
 const router = createRouter({
   history: createWebHistory(),
