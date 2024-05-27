@@ -144,4 +144,24 @@ export default [
     displayName: "Axios Get Params",
     component: () => import("../views/axios-get-params/index.vue"),
   },
+  {
+    path: "/route-params-view-one",
+    name: "RouteParamsViewOne",
+    displayName: "Route Params View One",
+    component: () => import("../views/route-params/view-one/index.vue"),
+  },
+  {
+    path: "/route-params-view-two/:myVariable/:car",
+    name: "RouteParamsViewTwo",
+    displayName: "Route Params View Two",
+    component: () => import("../views/route-params/view-two/index.vue"),
+    props: (route) => {
+      const props = {
+        ...route.params,
+        name: route.query.name,
+      };
+
+      return props;
+    },
+  },
 ];
