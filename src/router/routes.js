@@ -151,7 +151,7 @@ export default [
     component: () => import("../views/route-params/view-one/index.vue"),
   },
   {
-    path: "/route-params-view-two/:myVariable/:car",
+    path: "/route-params-view-two/:myVariable?/:car?",
     name: "RouteParamsViewTwo",
     displayName: "Route Params View Two",
     component: () => import("../views/route-params/view-two/index.vue"),
