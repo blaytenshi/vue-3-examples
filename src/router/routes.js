@@ -164,4 +164,10 @@ export default [
       return props;
     },
   },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "NotFound",
+    displayName: "Not Found",
+    component: () => import("../views/not-found/index.vue"),
+  },
 ];
