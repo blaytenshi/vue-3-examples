@@ -14,9 +14,9 @@
   </p>
   <ul>
     <router-link
-      v-for="{ name, displayName } in routes"
+      v-for="{ name, path, displayName } in routes"
       :key="name"
-      :to="{ name }"
+      :to="{ path }"
     >
       <li>{{ displayName }}</li>
     </router-link>
