@@ -165,6 +165,33 @@ export default [
     },
   },
   {
+    path: "/nested-routes-with-parent/users",
+    name: "NestedRoutesWithParentUserList",
+    displayName: "Nested Routes With Parent User",
+    children: [
+      {
+        name: "NestedRoutesWithParentUserList",
+        path: "",
+        component: () => import("../views/nested-routes-with-parent/users-list/index.vue"),
+      },
+      {
+        name: "NestedRoutesWithParentUserHome",
+        path: ":userName",
+        component: () => import("../views/nested-routes-with-parent/user-home/index.vue"),
+      },
+      {
+        name: "NestedRoutesWithParentUserPosts",
+        path: ":userName/posts",
+        component: () => import("../views/nested-routes-with-parent/user-posts/index.vue"),
+      },
+      {
+        name: "NestedRoutesWithParentUserProfile",
+        path: ":userName/address",
+        component: () => import("../views/nested-routes-with-parent/user-address/index.vue"),
+      },
+    ],
+  },
+  {
     path: "/:pathMatch(.*)*",
     name: "NotFound",
     displayName: "Not Found",
