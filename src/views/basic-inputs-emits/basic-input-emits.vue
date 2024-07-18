@@ -1,10 +1,11 @@
 <script setup>
-import { string } from "vue-types";
+import { string, bool } from "vue-types";
 
 defineProps({
   inputValue: string(),
   label: string(),
   inputName: string(),
+  isRequired: bool(),
 });
 
 defineEmits([
@@ -14,6 +15,7 @@ defineEmits([
 
 <template>
   <label :for="inputName">{{ label }}</label>
+  <span v-if="isRequired">*</span>
   <input
     type="text"
     :value="inputValue"
@@ -21,4 +23,8 @@ defineEmits([
   >
 </template>
 
-<style scoped />
+<style scoped>
+  span {
+    color: red;
+  }
+</style>

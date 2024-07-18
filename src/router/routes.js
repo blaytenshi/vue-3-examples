@@ -85,6 +85,12 @@ export default [
     component: () => import("../views/basic-inputs/index.vue"),
   },
   {
+    path: "/basic-inputs-emits",
+    name: "BasicInputsEmits",
+    displayName: "Basic Inputs Emits",
+    component: () => import("../views/basic-inputs-emits/index.vue"),
+  },
+  {
     path: "/computed-edge-cases",
     name: "ComputedEdgeCases",
     displayName: "Computed Edge Cases",
