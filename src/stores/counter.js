@@ -1,11 +1,9 @@
 import { defineStore } from "pinia";
 
-const counterStoreInitialState = {
-  currentCount: 0,
-};
-
 export const useCounterStore = defineStore("counter", {
-  state: () => counterStoreInitialState,
+  state: () => ({
+    currentCount: 0, // must set the state like this in pinia if you are to use the $reset() function
+  }),
   actions: {
     // keep action functions to regular functions because if we use arrow functions we'll lose reference to 'this'
     incrementCount({ increaseValue }) {
@@ -13,9 +11,6 @@ export const useCounterStore = defineStore("counter", {
     },
     decrementCount({ decreaseValue }) {
       this.currentCount = this.currentCount - decreaseValue;
-    },
-    resetCount() {
-      this.state = counterStoreInitialState;
     },
   },
 });

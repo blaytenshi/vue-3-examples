@@ -12,7 +12,7 @@
     </button>
   </div>
   <div>
-    <button @click="resetCount">
+    <button @click="counterStore.$reset">
       Reset
     </button>
   </div>
@@ -31,7 +31,7 @@ const counterStore = useCounterStore();
 // https://pinia.vuejs.org/core-concepts/#Destructuring-from-a-Store
 const { currentCount } = storeToRefs(counterStore);
 // you can just destructure actions from the store directly through
-const { incrementCount, decrementCount, resetCount } = counterStore;
+const { incrementCount, decrementCount } = counterStore;
 </script>
 
 <script>
