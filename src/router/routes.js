@@ -171,6 +171,12 @@ export default [
     },
   },
   {
+    path: "/floating-ui-example",
+    name: "FloatingUiExample",
+    displayName: "Floating UI Example",
+    component: () => import("../views/floating-ui/index.vue"),
+  },
+  {
     path: "/nested-routes-with-parent/users",
     name: "NestedRoutesWithParentUserList",
     displayName: "Nested Routes With Parent User",
