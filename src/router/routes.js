@@ -204,6 +204,12 @@ export default [
     ],
   },
   {
+    path: "/el-root-dom-element-template-refs",
+    name: "ElRootDomElement",
+    displayName: "$el Root Dom Element and Template Refs",
+    component: () => import("../views/el-root-dom-element-template-refs/index.vue"),
+  },
+  {
     path: "/:pathMatch(.*)*",
     name: "NotFound",
     displayName: "Not Found",
