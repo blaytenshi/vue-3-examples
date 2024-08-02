@@ -97,6 +97,12 @@ export default [
     component: () => import("../views/computed-edge-cases/index.vue"),
   },
   {
+    path: "/dynamic-component-with-dynamic-prop-values",
+    name: "DynamicComponentWithDynamicPropValues",
+    displayName: "Dynamic Component With Dynamic Prop Values",
+    component: () => import("../views/dynamic-component-with-dynamic-prop-values/index.vue"),
+  },
+  {
     path: "/local-list-searching",
     name: "LocalListSearching",
     displayName: "Local List Searching",
