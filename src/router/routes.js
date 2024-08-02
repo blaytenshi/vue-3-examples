@@ -31,6 +31,12 @@ export default [
     component: () => import("../views/custom-element-vmodel/index.vue"),
   },
   {
+    path: "/component-vmodel",
+    name: "ComponentVModelVue34",
+    displayName: "Component VModel with defineModel() for Vue 3.4+",
+    component: () => import("../views/component-vmodel/index.vue"),
+  },
+  {
     path: "/composition-api-basics",
     name: "CompositionApiBasics",
     displayName: "Composition API Basics",
@@ -107,6 +113,12 @@ export default [
     name: "LocalListSearching",
     displayName: "Local List Searching",
     component: () => import("../views/local-list-searching/index.vue"),
+  },
+  {
+    path: "/searchable-list-advanced",
+    name: "SearchableListAdvanced",
+    displayName: "Searchable List Advanced",
+    component: () => import("../views/searchable-list-advanced/index.vue"),
   },
   {
     path: "/losing-reactivity",
