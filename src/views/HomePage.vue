@@ -35,3 +35,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+li {
+  padding: 5px 5px;
+}
+</style>
