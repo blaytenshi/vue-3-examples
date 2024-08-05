@@ -28,13 +28,13 @@ export default [
     path: "/vue-3-vmodel-custom-elements",
     name: "Vue3VModelCustomElements",
     displayName: "Vue 3 V-Model Custom Elements",
-    component: () => import("../views/custom-element-vmodel/index.vue"),
+    component: () => import("../views/component-vmodel/index.vue"),
   },
   {
-    path: "/component-vmodel",
-    name: "ComponentVModelVue34",
+    path: "/component-vmodel-define-model",
+    name: "ComponentVModelDefineModel",
     displayName: "Component VModel with defineModel() for Vue 3.4+",
-    component: () => import("../views/component-vmodel/index.vue"),
+    component: () => import("../views/component-vmodel-define-model/index.vue"),
   },
   {
     path: "/composition-api-basics",

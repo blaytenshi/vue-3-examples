@@ -41,7 +41,7 @@ const handleCheckboxInput = (event) => {
 
 <template>
   <h1>Basic Inputs</h1>
-  <p>This example demonstrates how to build an input field without relying on the v-model syntax.</p>
+  <p>This example demonstrates how to build an input field without relying on the v-model syntax or emits syntax.</p>
   <div>
     <h2>Text Input</h2>
     <label for="personName">Person Name:</label>

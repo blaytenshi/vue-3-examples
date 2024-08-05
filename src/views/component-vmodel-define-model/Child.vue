@@ -1,5 +1,7 @@
 <script setup>
-const model = defineModel();
+const model = defineModel({
+  default: 0,
+});
 
 const update = () => {
   model.value++;

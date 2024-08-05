@@ -15,9 +15,11 @@ const handleInput = (emitValue) => {
 <template>
   <h1>Basic Input Emits</h1>
   <p>
-    Vue has a way of indicating from the Child to the parent component that an input value has changed and propagate it
-    upwards. This is through a method of using 'emit'. Below is an example of a custom component that can 'emit' values.
-    Typically in React, you would call a handler (or a redux action) to 'handle' the change event.
+    Vue has a way of indicating from the Child to the parent component that something has changed within the Child component.
+    From within the Child component, you can use the $emit() function to invoke a function held in the Parent component.
+    Typically this is used to broadcast the value of an input field as it changes up to the parent. In React, you would
+    pass in a handling function (or a redux action) to the Child component and invoke it within the Child component to
+    'handle' the change event. See basic-inputs example.
   </p>
   <p>
     An understanding of emits is required for when you build your own input fields that extend beyond the basic html
