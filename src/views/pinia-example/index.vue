@@ -12,8 +12,15 @@
     </button>
   </div>
   <div>
+    <p>Special Array: {{ specialArray }}</p>
+    <p>Current Count Doubled: {{ countDoubled }}</p>
+  </div>
+  <div>
     <button @click="counterStore.$reset">
       Reset
+    </button>
+    <button @click="addCountToSpecialArray">
+      Add Current Count to Special Array
     </button>
   </div>
 </template>
@@ -29,9 +36,10 @@ const counterStore = useCounterStore();
 
 // also have to be careful when we're destructuring from the store too
 // https://pinia.vuejs.org/core-concepts/#Destructuring-from-a-Store
-const { currentCount } = storeToRefs(counterStore);
+// State and getters should be passed through the storeToRefs() function to be extracted without losing reactivity
+const { currentCount, specialArray, countDoubled } = storeToRefs(counterStore);
 // you can just destructure actions from the store directly through
-const { incrementCount, decrementCount } = counterStore;
+const { incrementCount, decrementCount, addCountToSpecialArray } = counterStore;
 </script>
 
 <script>
