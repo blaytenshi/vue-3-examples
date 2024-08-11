@@ -79,6 +79,12 @@ export default [
     component: () => import("../views/pinia-example/index.vue"),
   },
   {
+    path: "/pinia-example-advanced",
+    name: "PiniaExampleAdvanced",
+    displayName: "Pinia Example Advanced",
+    component: () => import("../views/pinia-example-advanced/index.vue"),
+  },
+  {
     path: "/filter-list",
     name: "FilerList",
     displayName: "Filter List",
@@ -149,6 +155,12 @@ export default [
     name: "PaginatedTable",
     displayName: "Paginated Table",
     component: () => import("../views/paginated-table/index.vue"),
+  },
+  {
+    path: "/local-storage",
+    name: "LocalStorage",
+    displayName: "Local Storage",
+    component: () => import("../views/local-storage/index.vue"),
   },
   {
     path: "/sticky-element",

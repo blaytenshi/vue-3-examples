@@ -1,0 +1,11 @@
+{
+  "name": {
+    "firstName": "Jimmy",
+    "lastName": "Tang"
+  },
+  "favouriteColours": [
+    "red",
+    "blue",
+    "green"
+  ]
+}
