@@ -78,12 +78,12 @@ export default [
     displayName: "Pinia Example",
     component: () => import("../views/pinia-example/index.vue"),
   },
-  {
-    path: "/pinia-example-advanced",
-    name: "PiniaExampleAdvanced",
-    displayName: "Pinia Example Advanced",
-    component: () => import("../views/pinia-example-advanced/index.vue"),
-  },
+  // {
+  //   path: "/pinia-example-advanced",
+  //   name: "PiniaExampleAdvanced",
+  //   displayName: "Pinia Example Advanced",
+  //   component: () => import("../views/pinia-example-advanced/index.vue"),
+  // },
   {
     path: "/filter-list",
     name: "FilerList",
@@ -95,6 +95,12 @@ export default [
     name: "BasicInputs",
     displayName: "Basic Inputs",
     component: () => import("../views/basic-inputs/index.vue"),
+  },
+  {
+    path: "/basic-inputs-vmodel",
+    name: "BasicInputsVModel",
+    displayName: "Basic Inputs VModel",
+    component: () => import("../views/basic-inputs-vmodel/index.vue"),
   },
   {
     path: "/basic-inputs-emits",

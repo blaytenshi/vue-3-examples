@@ -9,6 +9,7 @@ const data = reactive({
   inputValue: "",
   radioValue: "",
   checkedBoxesValue: [],
+  selectedValue: "",
 });
 
 const handleInput = (event) => {
@@ -22,12 +23,6 @@ const handleRadioInput = (event) => {
   data.radioValue = value;
 };
 
-const handleFillForm = () => {
-  data.inputValue = "Jimmy!";
-  data.radioValue = "green";
-  data.checkedBoxesValue = ["apple", "banana", "blueberry"];
-};
-
 const handleCheckboxInput = (event) => {
   const hasEmittedValue = data.checkedBoxesValue.includes(event.target.value);
   if (hasEmittedValue) {
@@ -37,11 +32,24 @@ const handleCheckboxInput = (event) => {
   }
   console.log(data.checkedBoxesValue);
 };
+
+const handleSelectInput = (event) => {
+  console.log("select", event.target.value);
+  data.selectedValue = event.target.value;
+};
+
+const handleFillForm = () => {
+  data.inputValue = "Jimmy!";
+  data.radioValue = "green";
+  data.checkedBoxesValue = ["apple", "banana", "blueberry"];
+  data.selectedValue = "B";
+};
 </script>
 
 <template>
   <h1>Basic Inputs</h1>
   <p>This example demonstrates how to build an input field without relying on the v-model syntax or emits syntax.</p>
+  <p>We directly bind the value and the @input event or in some cases the checked and the @change event.</p>
   <div>
     <h2>Text Input</h2>
     <label for="personName">Person Name:</label>
@@ -112,6 +120,17 @@ const handleCheckboxInput = (event) => {
       @change="handleCheckboxInput"
     >
     <label for="blueberry">Blueberry</label>
+  </div>
+  <div>
+    <h2>Select Input</h2>
+    <select
+      :value="data.selectedValue"
+      @change="handleSelectInput"
+    >
+      <option>A</option>
+      <option>B</option>
+      <option>C</option>
+    </select>
   </div>
   <div>
     <button @click="handleFillForm">
