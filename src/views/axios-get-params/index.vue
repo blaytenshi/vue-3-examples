@@ -7,6 +7,7 @@ const { query } = route;
 
 const getProducts = async () => {
   const response = await simpleMiddlewareApi.get("/products", {
+    // these are Query Params, ie the request URL will look like /products?page=0&filters[qty]=50&filters[name]=Protein+Powder&status[]=in_stock&status[]=out_of_stock
     params: {
       page: 0,
       filters: {
