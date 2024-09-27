@@ -213,6 +213,12 @@ export default [
     component: () => import("../views/floating-ui/index.vue"),
   },
   {
+    path: "/humanize-duration",
+    name: "HumanizeDuration",
+    displayName: "HumanizeDuration",
+    component: () => import("../views/humanize-duration/index.vue"),
+  },
+  {
     path: "/nested-routes-with-parent/users",
     name: "NestedRoutesWithParentUserList",
     displayName: "Nested Routes With Parent User",
