@@ -1,15 +1,24 @@
 <template>
-  <h1>RxJS example</h1>
-  <button :onClick="handleClick">
-    Event Please!
-  </button>
+  <Container :direction="CONTAINER_DIRECTIONS.COLUMN">
+    <h1>RxJS example</h1>
+    <button :onClick="handleClick">
+      Event Please!
+    </button>
+  </Container>
 </template>
 
 <script>
 import { of, map } from "rxjs";
+import Container from "../components/Container.vue";
+import { CONTAINER_DIRECTIONS } from "../constants/options.js";
 
 export default {
   name: "RxJS",
+  computed: {
+    CONTAINER_DIRECTIONS() {
+      return CONTAINER_DIRECTIONS;
+    },
+  },
   methods: {
     handleClick: () => {
       console.log("clicked!");

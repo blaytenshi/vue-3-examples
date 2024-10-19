@@ -1,5 +1,7 @@
 <script setup>
 import myObject from "./my-object.json";
+import Container from "../../components/Container.vue";
+import { CONTAINER_DIRECTIONS } from "../../constants/options.js";
 console.log("myObject", myObject);
 
 // localStorage only stores things as a string
@@ -18,8 +20,10 @@ console.log("parsed myRetrievedObject", JSON.parse(myRetrievedObject));
 </script>
 
 <template>
-  <h1>Local Storage Examples</h1>
-  <p>This example mostly looks at how to use local storage</p>
+  <Container :direction="CONTAINER_DIRECTIONS.COLUMN">
+    <h1>Local Storage Examples</h1>
+    <p>This example mostly looks at how to use local storage</p>
+  </Container>
 </template>
 
 <style scoped>

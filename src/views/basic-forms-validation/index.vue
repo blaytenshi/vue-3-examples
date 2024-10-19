@@ -2,6 +2,8 @@
 import InputGroup from "../../components/InputGroup.vue";
 import { computed, reactive } from "vue";
 import { z, ZodError } from "zod";
+import Container from "../../components/Container.vue";
+import { CONTAINER_DIRECTIONS } from "../../constants/options.js";
 
 const state = reactive({
   formData: {
@@ -95,45 +97,47 @@ const handleSubmit = (event) => {
 </script>
 
 <template>
-  <h1>Basic Forms Validation</h1>
-  <p>This is an example with basic form validation</p>
-  <p>
-    The form validation is done with a library called Zod. By building a schema to validate against, we can
-    make things easier for ourselves.
-  </p>
-  <p>
-    This form also has onBlur validation, that is, if a field is 'touched' and then left, it will error but
-    only that field. This is because we don't want to error the entire form when the user hasn't even finished
-    filling out the rest of the form. This required a unique separation of logic. Will be building more
-    advanced validation logic in other examples.
-  </p>
-  <InputGroup
-    input-name="name"
-    input-label="Name"
-    type="text"
-    :input-value="state.formData.name"
-    :handle-input-change="handleInputChange"
-    :handle-blur="handleBlur"
-    :error-message="state.formErrors.name"
-    placeholder="Your name"
-  />
-  <InputGroup
-    input-name="email"
-    input-label="Email"
-    type="text"
-    :input-value="state.formData.email"
-    :handle-input-change="handleInputChange"
-    :handle-blur="handleBlur"
-    :error-message="state.formErrors.email"
-    placeholder="Your email"
-  />
-  <button
-    :disabled="isSubmitDisabled"
-    type="button"
-    @click="handleSubmit"
-  >
-    Submit
-  </button>
+  <Container :direction="CONTAINER_DIRECTIONS.COLUMN">
+    <h1>Basic Forms Validation</h1>
+    <p>This is an example with basic form validation</p>
+    <p>
+      The form validation is done with a library called Zod. By building a schema to validate against, we can
+      make things easier for ourselves.
+    </p>
+    <p>
+      This form also has onBlur validation, that is, if a field is 'touched' and then left, it will error but
+      only that field. This is because we don't want to error the entire form when the user hasn't even finished
+      filling out the rest of the form. This required a unique separation of logic. Will be building more
+      advanced validation logic in other examples.
+    </p>
+    <InputGroup
+      input-name="name"
+      input-label="Name"
+      type="text"
+      :input-value="state.formData.name"
+      :handle-input-change="handleInputChange"
+      :handle-blur="handleBlur"
+      :error-message="state.formErrors.name"
+      placeholder="Your name"
+    />
+    <InputGroup
+      input-name="email"
+      input-label="Email"
+      type="text"
+      :input-value="state.formData.email"
+      :handle-input-change="handleInputChange"
+      :handle-blur="handleBlur"
+      :error-message="state.formErrors.email"
+      placeholder="Your email"
+    />
+    <button
+      :disabled="isSubmitDisabled"
+      type="button"
+      @click="handleSubmit"
+    >
+      Submit
+    </button>
+  </Container>
 </template>
 
 <style scoped>

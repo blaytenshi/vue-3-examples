@@ -1,33 +1,37 @@
 <template>
-  <h1>Pinia</h1>
-  <div class="counter">
-    <button @click="incrementCount({ increaseValue: 1 })">
-      Increment
-    </button>
-    <p class="count">
-      {{ currentCount }}
-    </p>
-    <button @click="decrementCount({ decreaseValue: 1 })">
-      Decrement
-    </button>
-  </div>
-  <div>
-    <p>Special Array: {{ specialArray }}</p>
-    <p>Current Count Doubled: {{ countDoubled }}</p>
-  </div>
-  <div>
-    <button @click="counterStore.$reset">
-      Reset
-    </button>
-    <button @click="addCountToSpecialArray">
-      Add Current Count to Special Array
-    </button>
-  </div>
+  <Container :direction="CONTAINER_DIRECTIONS.COLUMN">
+    <h1>Pinia</h1>
+    <div class="counter">
+      <button @click="incrementCount({ increaseValue: 1 })">
+        Increment
+      </button>
+      <p class="count">
+        {{ currentCount }}
+      </p>
+      <button @click="decrementCount({ decreaseValue: 1 })">
+        Decrement
+      </button>
+    </div>
+    <div>
+      <p>Special Array: {{ specialArray }}</p>
+      <p>Current Count Doubled: {{ countDoubled }}</p>
+    </div>
+    <div>
+      <button @click="counterStore.$reset">
+        Reset
+      </button>
+      <button @click="addCountToSpecialArray">
+        Add Current Count to Special Array
+      </button>
+    </div>
+  </container>
 </template>
 
 <script setup>
 import { useCounterStore } from "../../stores/counter.js";
 import { storeToRefs } from "pinia";
+import Container from "../../components/Container.vue";
+import { CONTAINER_DIRECTIONS } from "../../constants/options.js";
 
 // in order to actually use the store, we need to actually call the store
 // but you can't just destructure from it otherwise you'll break reactivity

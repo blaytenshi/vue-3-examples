@@ -1,6 +1,8 @@
 <script setup>
 import CourseList from "./course-list.vue";
 import { reactive } from "vue";
+import Container from "../../components/Container.vue";
+import { CONTAINER_DIRECTIONS } from "../../constants/options.js";
 
 defineOptions({
   name: "LosingReactivity",
@@ -25,14 +27,14 @@ const changeCourseId = () => {
 </script>
 
 <template>
-  <div>
+  <Container :direction="CONTAINER_DIRECTIONS.COLUMN">
     <h1>Losing Reactivity</h1>
     <p>This is one way of losing reactivity in Vue. See the code!</p>
     <CourseList :course="course" />
     <button @click="changeCourseId">
       Change CourseId!
     </button>
-  </div>
+  </Container>>
 </template>
 
 <style scoped>

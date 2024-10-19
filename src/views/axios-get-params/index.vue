@@ -1,6 +1,8 @@
 <script setup>
 import simpleMiddlewareApi from "../../api/simple-middleware.js";
 import { useRoute } from "vue-router";
+import Container from "../../components/Container.vue";
+import { CONTAINER_DIRECTIONS } from "../../constants/options.js";
 
 const route = useRoute();
 const { query } = route;
@@ -30,9 +32,11 @@ try {
 </script>
 
 <template>
-  <p>
-    {{ query }}
-  </p>
+  <Container :direction="CONTAINER_DIRECTIONS.COLUMN">
+    <p>
+      {{ query }}
+    </p>
+  </Container>
 </template>
 
 <style scoped>

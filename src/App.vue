@@ -1,11 +1,13 @@
 <template>
-  <router-view />
+  <Container>
+    <MainMenu />
+    <router-view />
+  </Container>
 </template>
 
-<script>
-export default {
-  name: "App",
-};
+<script setup>
+import MainMenu from "./components/MainMenu.vue";
+import Container from "./components/Container.vue";
 </script>
 
 <style>
@@ -18,6 +20,7 @@ export default {
 
 body {
   margin: 0;
+  box-sizing: border-box;
 }
 
 ul {

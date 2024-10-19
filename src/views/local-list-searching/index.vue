@@ -2,6 +2,8 @@
 import LocalListSearch from "./local-list-search.vue";
 import { fetchProfiles } from "../../api/index.js";
 import { reactive } from "vue";
+import Container from "../../components/Container.vue";
+import { CONTAINER_DIRECTIONS } from "../../constants/options.js";
 
 const state = reactive({
   filteredUserList: [],
@@ -31,14 +33,16 @@ function handleSearchChange(event) {
 </script>
 
 <template>
-  <h1>Local List Searching</h1>
-  <p>
-    This is how a local list search should be implemented in the simplest of ways. The searching function should be
-    handled at the top layer and passed down into the LocalListSearch component.
-  </p>
-  <p>Available UserList: {{ state.userList }}</p>
-  <LocalListSearch
-    :user-list="state.filteredUserList"
-    :on-search-change="handleSearchChange"
-  />
+  <Container :direction="CONTAINER_DIRECTIONS.COLUMN">
+    <h1>Local List Searching</h1>
+    <p>
+      This is how a local list search should be implemented in the simplest of ways. The searching function should be
+      handled at the top layer and passed down into the LocalListSearch component.
+    </p>
+    <p>Available UserList: {{ state.userList }}</p>
+    <LocalListSearch
+      :user-list="state.filteredUserList"
+      :on-search-change="handleSearchChange"
+    />
+  </Container>
 </template>

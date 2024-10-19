@@ -3,6 +3,8 @@ import { fetchPaginatedItems } from "../../api/index.js";
 import { reactive } from "vue";
 import GenericTable from "./generic-table/index.vue";
 import { getTableProperties } from "../../utils/get-table-properties.js";
+import Container from "../../components/Container.vue";
+import { CONTAINER_DIRECTIONS } from "../../constants/options.js";
 
 const state = reactive({
   tableData: [],
@@ -31,20 +33,22 @@ getPaginatedProducts();
 </script>
 
 <template>
-  <h1>Paginated Table</h1>
-  <div class="pseudo-layout-container">
-    <div class="container">
-      <GenericTable
-        :table-header="columnData"
-        :table-data="state.tableData"
-        :pagination="state.paginationData"
-        :caption="caption"
-      />
-      <div>Page: {{ state.paginationData.page }}</div>
-      <div>Page Size: {{ state.paginationData.pageSize }}</div>
-      <div>Total Rows: {{ state.paginationData.totalResults }}</div>
+  <Container :direction="CONTAINER_DIRECTIONS.COLUMN">
+    <h1>Paginated Table</h1>
+    <div class="pseudo-layout-container">
+      <div class="container">
+        <GenericTable
+          :table-header="columnData"
+          :table-data="state.tableData"
+          :pagination="state.paginationData"
+          :caption="caption"
+        />
+        <div>Page: {{ state.paginationData.page }}</div>
+        <div>Page Size: {{ state.paginationData.pageSize }}</div>
+        <div>Total Rows: {{ state.paginationData.totalResults }}</div>
+      </div>
     </div>
-  </div>
+  </container>
 </template>
 
 <style scoped>

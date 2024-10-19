@@ -1,6 +1,8 @@
 <script setup>
 import { useRoute, useRouter } from "vue-router";
 import { reactive } from "vue";
+import Container from "../../components/Container.vue";
+import { CONTAINER_DIRECTIONS } from "../../constants/options.js";
 
 const route = useRoute();
 const router = useRouter();
@@ -62,45 +64,47 @@ function navigate() {
 </script>
 
 <template>
-  <button @click="handleCountUpdate">
-    ParamCount: {{ $route.query.count }}
-  </button>
-  <input
-    :value="filterState.userName"
-    type="text"
-    @input="handleUserNameUpdate"
-  >
-  <div>
-    <h1>Colours</h1>
+  <Container :direction="CONTAINER_DIRECTIONS.COLUMN">
+    <button @click="handleCountUpdate">
+      ParamCount: {{ $route.query.count }}
+    </button>
     <input
-      id="red"
-      type="checkbox"
-      name="colours"
-      value="red"
-      :checked="filterState.colours.includes('red')"
-      @change="handleColorChange"
+      :value="filterState.userName"
+      type="text"
+      @input="handleUserNameUpdate"
     >
-    <label for="red">Red</label>
-    <input
-      id="blue"
-      type="checkbox"
-      name="colours"
-      value="blue"
-      :checked="filterState.colours.includes('blue')"
-      @change="handleColorChange"
-    >
-    <label for="blue">Blue</label>
-    <input
-      id="green"
-      type="checkbox"
-      name="colours"
-      value="green"
-      :checked="filterState.colours.includes('green')"
-      @change="handleColorChange"
-    >
-    <label for="green">Green</label>
-  </div>
-  <button @click="navigate">
-    Add Colours Array to Query Params
-  </button>
+    <div>
+      <h1>Colours</h1>
+      <input
+        id="red"
+        type="checkbox"
+        name="colours"
+        value="red"
+        :checked="filterState.colours.includes('red')"
+        @change="handleColorChange"
+      >
+      <label for="red">Red</label>
+      <input
+        id="blue"
+        type="checkbox"
+        name="colours"
+        value="blue"
+        :checked="filterState.colours.includes('blue')"
+        @change="handleColorChange"
+      >
+      <label for="blue">Blue</label>
+      <input
+        id="green"
+        type="checkbox"
+        name="colours"
+        value="green"
+        :checked="filterState.colours.includes('green')"
+        @change="handleColorChange"
+      >
+      <label for="green">Green</label>
+    </div>
+    <button @click="navigate">
+      Add Colours Array to Query Params
+    </button>
+  </container>
 </template>

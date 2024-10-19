@@ -1,6 +1,8 @@
 <script setup>
 import { reactive } from "vue";
 import { getRestfulObjects } from "../../api/service-restful-api.js";
+import Container from "../../components/Container.vue";
+import { CONTAINER_DIRECTIONS } from "../../constants/options.js";
 
 const state = reactive({
   products: [],
@@ -34,16 +36,18 @@ const handleInput = (event) => {
 </script>
 
 <template>
-  <h1>Debounced Requests</h1>
-  <input
-    type="text"
-    placeholder="Search Term"
-    :value="state.searchValue"
-    @input="handleInput"
-  >
-  <button @click="fireRequest">
-    Get Products!
-  </button>
+  <Container :direction="CONTAINER_DIRECTIONS.COLUMN">
+    <h1>Debounced Requests</h1>
+    <input
+      type="text"
+      placeholder="Search Term"
+      :value="state.searchValue"
+      @input="handleInput"
+    >
+    <button @click="fireRequest">
+      Get Products!
+    </button>
+  </Container>
 </template>
 
 <style scoped>

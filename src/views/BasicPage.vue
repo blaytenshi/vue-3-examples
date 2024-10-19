@@ -1,13 +1,23 @@
 <script>
+import Container from "../components/Container.vue";
+import { CONTAINER_DIRECTIONS } from "../constants/options.js";
+
 export default {
   data() {
     return {
       message: "Hello World!",
     };
   },
+  computed: {
+    CONTAINER_DIRECTIONS() {
+      return CONTAINER_DIRECTIONS;
+    },
+  },
 };
 </script>
 
 <template>
-  <h1>{{ message }}</h1>
+  <Container :direction="CONTAINER_DIRECTIONS.COLUMN">
+    <h1>{{ message }}</h1>
+  </Container>
 </template>

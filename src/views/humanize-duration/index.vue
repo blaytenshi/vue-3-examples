@@ -2,6 +2,8 @@
 import Tag from "../../components/Tag.vue";
 import humanizeDuration from "humanize-duration";
 import myHumanizeDuration, { DURATION_FORMAT } from "./humanizeDuration.js";
+import Container from "../../components/Container.vue";
+import { CONTAINER_DIRECTIONS } from "../../constants/options.js";
 
 const duration = 1200002000;
 const duration2 = 1200002200;
@@ -9,7 +11,7 @@ const duration2 = 1200002200;
 </script>
 
 <template>
-  <div>
+  <Container :direction="CONTAINER_DIRECTIONS.COLUMN">
     <h1>Testing out humanize-duration library</h1>
     <p>This page is for testing out the humanize-duration library (https://www.npmjs.com/package/humanize-duration).</p>
     <p>A great package for converting durations in milliseconds to a human readable format.</p>
@@ -34,7 +36,7 @@ const duration2 = 1200002200;
     <Tag color="purple">
       {{ myHumanizeDuration(duration2, { delimiter: " ", round: true, language: "zh_TW", durationFormat: DURATION_FORMAT.SHORT}) }}
     </Tag>
-  </div>
+  </Container>>
 </template>
 
 <style scoped>

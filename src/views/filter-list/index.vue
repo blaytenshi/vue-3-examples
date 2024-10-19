@@ -1,6 +1,8 @@
 <script setup>
 import FilterBar from "./filter-bar/index.vue";
 import { reactive } from "vue";
+import Container from "../../components/Container.vue";
+import { CONTAINER_DIRECTIONS } from "../../constants/options.js";
 // import excludeIndexFromArray from "../../utils/exclude-index-from-array.js";
 
 const handleDeleteTag = (index) => {
@@ -40,14 +42,14 @@ const filterList = reactive([
 </script>
 
 <template>
-  <div>
+  <Container :direction="CONTAINER_DIRECTIONS.COLUMN">
     <h1>Filter Bar Example</h1>
     <p>Here we can add and remove elements from a list to be rendered</p>
     <FilterBar
       :filter-list="filterList"
       :add-filter="addFilter"
     />
-  </div>
+  </Container>
 </template>
 
 <style scoped>

@@ -1,11 +1,9 @@
 <template>
-  <div>
-    <label>{{ inputLabel }}</label>
-    <input
-      :value="modelValue"
-      @input="$emit('update:modelValue', $event.target.value)"
-    >
-  </div>
+  <label>{{ inputLabel }}</label>
+  <input
+    :value="modelValue"
+    @input="$emit('update:modelValue', $event.target.value)"
+  >
 </template>
 
 <script>

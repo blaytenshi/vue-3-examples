@@ -1,32 +1,35 @@
 <script setup>
-
+import Container from "../../components/Container.vue";
+import { CONTAINER_DIRECTIONS } from "../../constants/options.js";
 </script>
 
 <template>
-  <h1>Sticky Element<h1 /></h1>
-  <div class="container">
-    <div class="content-element">
-      <p>content element</p>
-      <p>content element</p>
-      <p>content element</p>
-      <p>content element</p>
-      <p>content element</p>
-      <p>content element</p>
-      <p>content element</p>
+  <Container :direction="CONTAINER_DIRECTIONS.COLUMN">
+    <h1>Sticky Element<h1 /></h1>
+    <div class="container">
+      <div class="content-element">
+        <p>content element</p>
+        <p>content element</p>
+        <p>content element</p>
+        <p>content element</p>
+        <p>content element</p>
+        <p>content element</p>
+        <p>content element</p>
+      </div>
+      <div class="sticky-element">
+        sticky element
+      </div>
+      <div class="content-element">
+        <p>another content element</p>
+        <p>another content element</p>
+        <p>another content element</p>
+        <p>another content element</p>
+        <p>another content element</p>
+        <p>another content element</p>
+        <p>another content element</p>
+      </div>
     </div>
-    <div class="sticky-element">
-      sticky element
-    </div>
-    <div class="content-element">
-      <p>another content element</p>
-      <p>another content element</p>
-      <p>another content element</p>
-      <p>another content element</p>
-      <p>another content element</p>
-      <p>another content element</p>
-      <p>another content element</p>
-    </div>
-  </div>
+  </Container>
 </template>
 
 <style scoped>
