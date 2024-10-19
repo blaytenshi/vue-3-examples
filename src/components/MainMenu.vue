@@ -1,27 +1,32 @@
 <script setup>
-import routes from "../router/routes.js";
 import Container from "./Container.vue";
-import { CONTAINER_DIRECTIONS } from "../constants/options.js";
+import { CONTAINER_DIRECTIONS, ROUTE_CATEGORY, ROUTE_CATEGORY_OPTIONS } from "../constants/options.js";
+
+import routes from "../router/routes.js";
+
 </script>
 
 <template>
   <Container :direction="CONTAINER_DIRECTIONS.COLUMN">
     <h2>Examples Menu</h2>
-    <ul>
-      <router-link
-        v-for="{ name, path, displayName } in routes"
-        :key="name"
-        :to="{ path }"
-      >
-        <li>{{ displayName }}</li>
-      </router-link>
-    </ul>
+    <section v-for="category in Object.values(ROUTE_CATEGORY)">
+      <h3>{{ ROUTE_CATEGORY_OPTIONS[category] }}</h3>
+      <ul>
+        <router-link
+          v-for="{ name, path, displayName } in routes.filter(route => route.category === category)"
+          :key="name"
+          :to="{ path }"
+        >
+          <li>{{ displayName }}</li>
+        </router-link>
+      </ul>
+    </section>
   </Container>
 </template>
 
 <style scoped>
 ul {
-  width: 200px;
+  width: 250px;
 }
 
 li {

@@ -33,6 +33,7 @@ Below is a list of dependencies of the project.
 |:--------------------------|:--------------------------------------------------------|:-----|
 | axios                     | Industry standard library used to make requests         | App  |
 | humanize-duration         | Library to format duration into human readable format   | App  |
+| lodash                    | Useful functions                                        | App  |
 | pinia                     | State management for Vue                                | App  |
 | qs                        | Library used to build query-strings                     | App  |
 | rxjs                      | Functional programming reactive library                 | App  |
