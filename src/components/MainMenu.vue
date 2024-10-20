@@ -4,12 +4,17 @@ import { CONTAINER_DIRECTIONS, ROUTE_CATEGORY, ROUTE_CATEGORY_OPTIONS } from "..
 
 import routes from "../router/routes.js";
 
+console.log("routes", routes.filter(route => route.category === ROUTE_CATEGORY.FUNDAMENTALS));
+
 </script>
 
 <template>
   <Container :direction="CONTAINER_DIRECTIONS.COLUMN">
     <h2>Examples Menu</h2>
-    <section v-for="category in Object.values(ROUTE_CATEGORY)">
+    <section
+      v-for="category in Object.values(ROUTE_CATEGORY)"
+      :key="category"
+    >
       <h3>{{ ROUTE_CATEGORY_OPTIONS[category] }}</h3>
       <ul>
         <router-link

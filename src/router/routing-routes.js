@@ -6,14 +6,14 @@ export const routingRoutes = [
     name: "QueryParams",
     displayName: "Query Params",
     category: ROUTE_CATEGORY.ROUTING,
-    component: () => import("../views/query-params/index.vue"),
+    component: () => import("../views/routing-examples/query-params/index.vue"),
   },
   {
     path: "/route-params-view-one",
     name: "RouteParamsViewOne",
     displayName: "Route Params View One",
     category: ROUTE_CATEGORY.ROUTING,
-    component: () => import("../views/route-params/view-one/index.vue"),
+    component: () => import("../views/routing-examples/route-params/view-one/index.vue"),
   },
   {
     path: "/route-params-view-two/:myVariable?/:car?",
@@ -21,7 +21,7 @@ export const routingRoutes = [
     displayName: "Route Params View Two",
     category: ROUTE_CATEGORY.ROUTING,
 
-    component: () => import("../views/route-params/view-two/index.vue"),
+    component: () => import("../views/routing-examples/route-params/view-two/index.vue"),
     props: (route) => {
       const props = {
         ...route.params,
@@ -40,22 +40,22 @@ export const routingRoutes = [
       {
         name: "NestedRoutesWithParentUserList",
         path: "",
-        component: () => import("../views/nested-routes-with-parent/users-list/index.vue"),
+        component: () => import("../views/routing-examples/nested-routes-with-parent/users-list/index.vue"),
       },
       {
         name: "NestedRoutesWithParentUserHome",
         path: ":userName",
-        component: () => import("../views/nested-routes-with-parent/user-home/index.vue"),
+        component: () => import("../views/routing-examples/nested-routes-with-parent/user-home/index.vue"),
       },
       {
         name: "NestedRoutesWithParentUserPosts",
         path: ":userName/posts",
-        component: () => import("../views/nested-routes-with-parent/user-posts/index.vue"),
+        component: () => import("../views/routing-examples/nested-routes-with-parent/user-posts/index.vue"),
       },
       {
         name: "NestedRoutesWithParentUserProfile",
         path: ":userName/address",
-        component: () => import("../views/nested-routes-with-parent/user-address/index.vue"),
+        component: () => import("../views/routing-examples/nested-routes-with-parent/user-address/index.vue"),
       },
     ],
   },
