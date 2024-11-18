@@ -15,12 +15,26 @@ const multiSelected = ref([]);
   <Container :direction="CONTAINER_DIRECTIONS.COLUMN">
     <h1>Basic Input V-Model</h1>
     <p>
-      Besides passing in a prop and having a handling function handle the change on the input, you can use the v-model
-      directive on the html element itself.
+      In the Basic Inputs example, you saw how you can make the raw input element respond to input change and update its
+      value in a similar pattern to ReactJS with handling functions and value props. This is a fairly manual process
+      that requires you to know what input events (change or input) to respond to.
+    </p>
+    <p>
+      In order to simplify things, you can use the v-model directive on the html element itself. The v-model directive is
+      for binding the value in the ref/data (what people from React would refer to as 'state') to the 'value' of the
+      raw input element and vice-versa.
+    </p>
+    <p>
+      The v-model directive is a two-way binding meaning that if you update the state, the value automatically gets updated
+      and reflected in the input value of the input element. This is useful in that now you don't have to know the
+      specific events to listen for, all you need to do now is to simply read the new value from the state.
     </p>
     <div>
       <h2>General Text or Number Input</h2>
-      <p>For a general text input, you just put the v-model directive on the input html element.</p>
+      <p>
+        For a general text input, you just put the v-model directive on the input html element. Notice there is no
+        @change or @input or anything like that. Once the value changes, v-model will simply update the state.
+      </p>
       <input v-model="inputValue">
     </div>
     <div>

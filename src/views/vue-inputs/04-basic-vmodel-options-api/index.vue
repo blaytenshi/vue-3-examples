@@ -1,15 +1,12 @@
 <template>
   <Container :direction="CONTAINER_DIRECTIONS.COLUMN">
-    <h1>Vue 3 V-Model Native Elements</h1>
+    <h1>Basic v-model using Options API</h1>
     <p>
-      This is the most basic example of v-model's two-way binding. It uses Native
-      Elements, ie the `input` element
+      This example also shows the use of the v-model direction on raw html input element.
     </p>
     <p>
-      The reason it is called two-way binding is because if you update the value
-      in the input field you will also update the value stored in data(). If you
-      update the value in data(), it will also update the value in the input
-      field.
+      However the main difference with other earlier examples is that there's a button that allows you to change
+      the value of the input directly (not through input) and see the v-model two-way binding working.
     </p>
     <input v-model="inputValue">
     <div>Value of `inputValue`: {{ inputValue }}</div>

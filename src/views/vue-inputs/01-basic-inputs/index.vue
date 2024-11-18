@@ -50,10 +50,17 @@ const handleFillForm = () => {
 
 <template>
   <Container :direction="CONTAINER_DIRECTIONS.COLUMN">
-    <h1>Basic Inputs</h1>
+    <h1>Basic Inputs using value and handling functions</h1>
     <p>This example demonstrates how to build an input field without relying on the v-model syntax or emits syntax.</p>
-    <p>We directly bind the value and the @input event (or in some cases the checked and the @change event) directly to a value prop and a handling function.</p>
-    <p>If you compare this to the basic-inputs-vmodel example, you will be able to see how the v-model directive replaces the value prop and the handling function.</p>
+    <p>
+      We directly bind the value and the @input event (or in some cases the checked and the @change event) directly
+      to a value prop and a handling function.
+    </p>
+    <p>This is a very ReactJS approach to controlling the inputs values (sometimes known as Controlled components in React).</p>
+    <p>
+      If you compare this to the basic-inputs-vmodel examples further on, you will be able to see how the v-model
+      directive replaces the value prop and the handling function.
+    </p>
     <div>
       <h2>Text Input</h2>
       <label for="personName">Person Name:</label>
