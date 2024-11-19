@@ -5,18 +5,24 @@ import vue from "@vitejs/plugin-vue";
 export default defineConfig({
   plugins: [vue()],
   server: {
-    port: 3000,
+    port: 3030,
   },
   // vitest configuration, automatically detected by vite
   test: {
+    include: ["src/**/*.test.{js,ts,jsx,tsx}"], // include only *.test files in the src folder
+    exclude: [
+      "tests/e2e/**",
+      "node_modules/**",
+      "dist/**",
+    ],
     coverage: {
       enabled: true,
-      include: ["**/src"], // only do code coverage for everything in src directory otherwise it will scan root dir
+      include: ["src/**"],
       provider: "istanbul", // using istanbul to do code coverage
       reporter: ["text", "html"], // coverage should be displayed as text as well as generate HTML report
-      reportsDirectory: "./test-reports/coverage/", // coverage reports should be saved into coverage/ subdirectory
+      reportsDirectory: "./tests/unit/test-reports/coverage/", // coverage reports should be saved into coverage/ subdirectory
     },
     reporters: ["verbose", "html"], // should report a verbose report along with an HTML report
-    outputFile: "./test-reports/index.html", // HTML test reports to be written to this file
+    outputFile: "./tests/unit/test-reports/index.html", // HTML test reports to be written to this file
   },
 });
