@@ -50,4 +50,11 @@ export const librariesRoutes = [
     category: ROUTE_CATEGORY.LIBRARIES,
     component: () => import("../views/library-examples/pinia-example/index.vue"),
   },
+  {
+    path: "/playwright-basics",
+    name: "PlaywrightBasics",
+    displayName: "Playwright Basics",
+    category: ROUTE_CATEGORY.LIBRARIES,
+    component: () => import("../views/library-examples/playwright-basics/index.vue"),
+  },
 ];

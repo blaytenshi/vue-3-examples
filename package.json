@@ -8,8 +8,10 @@
     "eslint-fix": "eslint ./ --ext .vue --ext .js --fix",
     "build": "vite build",
     "preview": "vite preview",
-    "test:dev": "vitest run --coverage",
-    "test:html-report": "vitest run --coverage && vite preview --outDir test-reports"
+    "test:unit": "vitest run --coverage",
+    "test:unit:html-report": "vitest run --coverage && vite preview --outDir test-reports",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui"
   },
   "dependencies": {
     "@floating-ui/vue": "^1.1.2",
@@ -25,7 +27,9 @@
     "zod": "^3.23.4"
   },
   "devDependencies": {
+    "@playwright/test": "^1.49.0",
     "@stylistic/eslint-plugin": "^1.7.0",
+    "@types/node": "^22.9.0",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vitest/coverage-istanbul": "^1.6.0",
     "@vitest/ui": "^1.6.0",

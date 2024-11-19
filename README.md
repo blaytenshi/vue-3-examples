@@ -7,8 +7,10 @@ Slowly it evolved more and more complex examples until what you see here today.
 `eslint-fix` - Lints the project, all `.vue` and `.js` files. Will apply auto-fix.  
 `build` - Builds the UI project.  
 `preview` - Builds the UI project and serves it locally.  
-`test:dev` - Executes a once off run of the tests with coverage. Saves reports to `/test-reports` directory.  
-`test:html-report` - Executes the once off tests with coverage and serves the report locally.
+`test:unit` - Executes a once off run of the tests with coverage. Saves reports to `/test-reports` directory.  
+`test:unit:html-report` - Executes the once off tests with coverage and serves the report locally.
+`test:e2e` - Executes end-to-end tests with Playwright
+`test:e2e:ui` - Executes end-to-end tests with Playwright but in a visible UI
 
 ## Node Version
 There is a minimum version of Node needed for development. Currently, the minimum version is: `21.1.0`
@@ -41,7 +43,9 @@ Below is a list of dependencies of the project.
 | vue-router                | Router for Vue                                          | App  |
 | vue-types                 | Simplified type checking for props in Vue               | App  |
 | zod                       | Object validation library                               | App  |
+| @playwright/test          | E2E Testing library                                     | Dev  |
 | @stylistic/eslint-plugin  | Plugin for ESLint for code styling standards            | Dev  |
+| @types/node               | Typescript Definitions for Node. Came with Playwright   | Dev  |
 | @vitejs/plugin-vue        | Plugin for Vite to allow builds for Vue                 | Dev  |
 | @vitest/coverage-istanbul | Vitest plugin for Istanbul                              | Dev  |
 | @vitest/ui                | Vitest plugin for generating HTML test reports          | Dev  |
