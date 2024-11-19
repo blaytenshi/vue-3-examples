@@ -8,9 +8,9 @@ Slowly it evolved more and more complex examples until what you see here today.
 `build` - Builds the UI project.  
 `preview` - Builds the UI project and serves it locally.  
 `test:unit` - Executes a once off run of the tests with coverage. Saves reports to `/test-reports` directory.  
-`test:unit:html-report` - Executes the once off tests with coverage and serves the report locally.
-`test:e2e` - Executes end-to-end tests with Playwright
-`test:e2e:ui` - Executes end-to-end tests with Playwright but in a visible UI
+`test:unit:html-report` - Executes the once off tests with coverage and serves the report locally.  
+`test:e2e` - Executes end-to-end tests with Playwright  
+`test:e2e:ui` - Executes end-to-end tests with Playwright but in a visible UI  
 
 ## Node Version
 There is a minimum version of Node needed for development. Currently, the minimum version is: `21.1.0`
