@@ -9,7 +9,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "test:unit": "vitest run --coverage",
-    "test:unit:html-report": "vitest run --coverage && vite preview --outDir test-reports",
+    "test:unit:html-report": "vitest run --coverage && vite preview --outDir /tests/unit/test-reports",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui"
   },
