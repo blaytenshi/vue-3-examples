@@ -57,4 +57,11 @@ export const librariesRoutes = [
     category: ROUTE_CATEGORY.LIBRARIES,
     component: () => import("../views/library-examples/playwright-basics/index.vue"),
   },
+  {
+    path: "/date-fns",
+    name: "DateFns",
+    displayName: "DateFns Examples",
+    category: ROUTE_CATEGORY.LIBRARIES,
+    component: () => import("../views/library-examples/date-fns/index.vue"),
+  },
 ];
