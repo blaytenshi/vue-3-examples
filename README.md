@@ -34,6 +34,7 @@ Below is a list of dependencies of the project.
 | Dependency Name           | Description                                             | Type |
 |:--------------------------|:--------------------------------------------------------|:-----|
 | axios                     | Industry standard library used to make requests         | App  |
+| date-fns                  | Very common library for manipulating dates              | App  |
 | humanize-duration         | Library to format duration into human readable format   | App  |
 | lodash                    | Useful functions                                        | App  |
 | pinia                     | State management for Vue                                | App  |

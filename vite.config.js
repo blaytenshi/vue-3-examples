@@ -9,7 +9,8 @@ export default defineConfig({
   },
   // vitest configuration, automatically detected by vite
   test: {
-    include: ["src/**/*.test.{js,ts,jsx,tsx}"], // include only *.test files in the src folder
+    globals: true,
+    include: ["tests/**/*.test.{js,ts,jsx,tsx}"], // include only *.test files in the src folder
     exclude: [
       "tests/e2e/**",
       "node_modules/**",
