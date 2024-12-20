@@ -28,7 +28,17 @@ coverage
 *.sw?
 
 /test-reports/
+/tests/unit/test-reports/
 /tests/e2e/test-results/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+# yarn
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
