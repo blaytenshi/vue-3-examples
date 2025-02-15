@@ -2,15 +2,19 @@
 This was originally a project I started on CodeSandbox to learn various quirks in Vue that were different to React.  
 Slowly it evolved more and more complex examples until what you see here today.
 
-## Scripts
-`dev` - Serves this FE application in dev mode.  
-`eslint-fix` - Lints the project, all `.vue` and `.js` files. Will apply auto-fix.  
-`build` - Builds the UI project.  
-`preview` - Builds the UI project and serves it locally.  
-`test:unit` - Executes a once off run of the tests with coverage. Saves reports to `/test-reports` directory.  
-`test:unit:html-report` - Executes the once off tests with coverage and serves the report locally.  
-`test:e2e` - Executes end-to-end tests with Playwright  
-`test:e2e:ui` - Executes end-to-end tests with Playwright but in a visible UI  
+## Commands
+To run a particular command, simply prefix with `yarn`. Eg `yarn dev`.
+
+| Command                 | Result                                                                                          |
+|:------------------------|-------------------------------------------------------------------------------------------------|
+| `dev`                   | Serves this FE application in dev mode.                                                         |
+| `eslint-fix`            | Lints the project, all `.vue` and `.js` files. Will apply auto-fix.                             |
+| `build`                 | Builds the UI project.                                                                          |
+| `preview`               | Builds the UI project and serves it locally.                                                    |
+| `test:unit`             | Executes a once off run of the tests with coverage. Saves reports to `/test-reports` directory. |
+| `test:unit:html-report` | Executes the once off tests with coverage and serves the report locally.                        |
+| `test:e2e`              | Executes end-to-end tests with Playwright                                                       |
+| `test:e2e:ui`          | Executes end-to-end tests with Playwright but in a visible UI                                   |
 
 ## Node Version
 There is a minimum version of Node needed for development. Currently, the minimum version is: `21.1.0`
@@ -55,3 +59,10 @@ Below is a list of dependencies of the project.
 | vite                      | Vite that is used to serve and build our FE application | Dev  |
 | vitest                    | Testing Library for Vite Projects                       | Dev  |
 
+## Tests
+There are two testing libraries, Playwright and Vitest. Playwright is for UI E2E tests. They run UI level testing.
+Vitest is purely for unit level testing.
+
+All tests are stored in the `/tests` folder. They are split accordingly into their `/tests/e2e` and `/tests/unit`
+counterparts with test reports for each type of testing beneath those. In the Commands section you can see the
+relevant commands to run tests for each.
