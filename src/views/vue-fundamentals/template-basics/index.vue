@@ -9,6 +9,8 @@ import MyList from "./components/my-list.vue";
 import ShoppingItem from "./components/shopping-item.vue";
 import Container from "../../../components/Container.vue";
 import { CONTAINER_DIRECTIONS } from "../../../constants/options.js";
+import MyClickableLinks from "./components/my-clickable-links.vue";
+import MyRandomList from "./components/my-random-list.vue";
 
 const four = "Four";
 const dynamicSlotName = computed(() => `column${four}`);
@@ -41,6 +43,10 @@ const shoppingList = [
     itemName: "Milk",
   },
 ];
+
+const handleOnClick = (clickedId) => {
+  console.log(`clicked ${clickedId}`);
+};
 </script>
 
 <template>
@@ -86,6 +92,7 @@ const shoppingList = [
 
       <!-- Slot props for accessing props from a child component in the parent. Single Default slot -->
       <h2>Accessing a slot's props</h2>
+      <p>Slots can have props that can be propagated back up to the parent.</p>
       <p>Here, `single-column-layout` has a default slot. You can use slot-props to access the slot's props</p>
       <single-column-layout v-slot="slotProps">
         {{ slotProps.text }}
@@ -93,17 +100,44 @@ const shoppingList = [
         {{ slotProps.myProp }}
       </single-column-layout>
 
-      <!-- Multiple slots returning slot props. You need to wrap them in a template tag! -->
+      <h2>Multiple Slot Props</h2>
+      <p>Here, multiple slots returning slot props. You need to wrap them in a template tag!</p>
       <two-column-layout>
         <template #default="slotProps">
           {{ slotProps.text }}
           {{ slotProps.count }}
           {{ slotProps.myProp }}
         </template>
+        <!-- You can destructure the slot prop -->
         <template #secondarySlot="{text, count, secondarySlotProp}">
           {{ text }}
           {{ count }}
           {{ secondarySlotProp }}
+        </template>
+      </two-column-layout>
+
+      <h2>Combined slot props</h2>
+      <p>
+        If you pass in a child component into the slot, the child component can gain access to the values of the slot
+        props from the parent component. As you can see the two-column-layout component's slot props have their own
+        values made available through 'slotProp' variable. They are passed into the child component. Not to mention the
+        fact that the handleOnClick grandparent/rendering component can also be passed into the parent and child component
+        as per normal props flow!
+      </p>
+      <two-column-layout>
+        <!-- has to come from the slot tag -->
+        <template #default="slotProp">
+          <my-clickable-links
+            :list="[{ id: 1, label: 'hello1' }, { id: 2, label: 'world1' }]"
+            :handle-on-click="handleOnClick"
+            :passed-slot-prop="slotProp.myProp"
+          />
+        </template>
+        <template #secondarySlot="{ secondarySlotProp }">
+          <my-random-list
+            :list="[{ id: 1, label: 'hello2' }, { id: 2, label: 'world2' }]"
+            :secondary-prop-slot="secondarySlotProp"
+          />
         </template>
       </two-column-layout>
 
@@ -124,9 +158,17 @@ const shoppingList = [
         Item or a Shopping Item) so that you can pass the content (item) into the UserItem or ShoppingItem component you're
         rendering in the slot.
       </p>
-      <MyList :items="usersList">
-        <template #default="{item}">
+      <p>
+        We can also pass in a click handler that can be utilised by all list items provided that they have the same interface
+        therefore the onClick is also only written once but can be used for many different items rendered by the MyList component.
+      </p>
+      <MyList
+        :items="usersList"
+        :handle-on-click="handleOnClick"
+      >
+        <template #default="{ item, insideFunc }">
           <UserItem :user="item" />
+          {{ insideFunc() }}
         </template>
       </MyList>
       <MyList :items="shoppingList">
@@ -135,6 +177,11 @@ const shoppingList = [
         </template>
       </MyList>
     </div>
+    <h2>Final Takeaways</h2>
+    <p>
+      The purpose of slots allow the parent to work with a variety of child components provided that the child component
+      has a compatible props interface with the parent component.
+    </p>
   </Container>
 </template>
 
