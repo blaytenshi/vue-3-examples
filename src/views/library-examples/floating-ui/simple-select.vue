@@ -1,7 +1,9 @@
 <script setup>
 import { reactive, ref } from "vue";
+import { func, string } from "vue-types";
 import { useFloating } from "@floating-ui/vue";
 import useClickOutside from "../../../composables/useClickOutside.js";
+import { noop } from "lodash";
 
 const reference = ref(null);
 const floating = ref(null);
@@ -15,7 +17,12 @@ const handleClick = () => {
   state.flyoutIsOpen = !state.flyoutIsOpen;
 };
 
-useClickOutside([reference, floating, state], handleClick);
+useClickOutside([reference, floating, state], () => state.flyoutIsOpen = false);
+
+defineProps({
+  onItemClick: func().def(noop),
+  label: string().def("Button"),
+});
 </script>
 
 <template>
@@ -23,7 +30,7 @@ useClickOutside([reference, floating, state], handleClick);
     ref="reference"
     @click="handleClick"
   >
-    Button
+    {{ label }}
   </button>
   <div
     v-if="state.flyoutIsOpen"
@@ -31,7 +38,7 @@ useClickOutside([reference, floating, state], handleClick);
     class="tooltip"
     :style="floatingStyles"
   >
-    tooltip
+    <slot name="flyout" />
   </div>
 </template>
 
@@ -41,7 +48,7 @@ useClickOutside([reference, floating, state], handleClick);
   width: max-content;
   top: 0;
   left: 0;
-  background: #222;
+  background: #4e94ce;
   padding: 5px;
   color: white;
   border-radius: 4px;

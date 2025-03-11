@@ -47,6 +47,7 @@ Below is a list of dependencies of the project.
 | vue                       | Vue, of course                                          | App  |
 | vue-router                | Router for Vue                                          | App  |
 | vue-types                 | Simplified type checking for props in Vue               | App  |
+| yup                       | Object validation library for form/field validation     | App  |
 | zod                       | Object validation library                               | App  |
 | @playwright/test          | E2E Testing library                                     | Dev  |
 | @stylistic/eslint-plugin  | Plugin for ESLint for code styling standards            | Dev  |
