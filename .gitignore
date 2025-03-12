@@ -32,3 +32,6 @@ coverage
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+.yarn/install-state.gz
+/tests/unit/test-reports/
