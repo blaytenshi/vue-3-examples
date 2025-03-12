@@ -2,6 +2,20 @@ import { ROUTE_CATEGORY } from "../constants/options.js";
 
 export const librariesRoutes = [
   {
+    path: "/vee-validate-hoc-field-simple",
+    name: "VeeValidateHocFieldSimple",
+    displayName: "Vee-Validate HOC Field Simple",
+    category: ROUTE_CATEGORY.LIBRARIES,
+    component: () => import("../views/library-examples/vee-validate/hoc-field-example.vue"),
+  },
+  {
+    path: "/vee-validate-hoc-form-simple",
+    name: "VeeValidateHocFormSimple",
+    displayName: "Vee-Validate HOC Form Simple",
+    category: ROUTE_CATEGORY.LIBRARIES,
+    component: () => import("../views/library-examples/vee-validate/hoc-form-example.vue"),
+  },
+  {
     path: "/floating-ui-example",
     name: "FloatingUiExample",
     displayName: "Floating UI Example",
