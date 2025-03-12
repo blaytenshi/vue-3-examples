@@ -27,11 +27,20 @@ coverage
 *.sln
 *.sw?
 
+# Test generated files
 /test-reports/
 /tests/e2e/test-results/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
-
-.yarn/install-state.gz
 /tests/unit/test-reports/
+
+# Yarn
+.yarn/install-state.gz
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
