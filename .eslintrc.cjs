@@ -1,9 +1,6 @@
 module.exports = {
   root: true,
-  extends: [
-    'eslint:recommended',
-    'plugin:vue/vue3-recommended',
-  ],
+  extends: ['eslint:recommended', 'plugin:vue/vue3-recommended', 'plugin:storybook/recommended'],
   plugins: [
     '@stylistic'
   ],
