@@ -17,7 +17,9 @@
   },
   "dependencies": {
     "@floating-ui/vue": "^1.1.2",
+    "@storybook/addon-actions": "^8.6.4",
     "@vee-validate/rules": "^4.15.0",
+    "@vue/compiler-dom": "^3.5.13",
     "axios": "1.7.4",
     "date-fns": "^4.1.0",
     "humanize-duration": "^3.32.1",
@@ -50,6 +52,8 @@
     "eslint": "^8.57.0",
     "eslint-plugin-storybook": "^0.11.4",
     "eslint-plugin-vue": "^9.22.0",
+    "glob": "^11.0.1",
+    "node-html-parser": "^7.0.1",
     "storybook": "^8.6.4",
     "vite": "5.4.6",
     "vitest": "^1.6.0"

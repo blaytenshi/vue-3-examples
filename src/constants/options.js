@@ -20,3 +20,10 @@ export const ROUTE_CATEGORY_OPTIONS = {
   [ROUTE_CATEGORY.LIBRARIES]: "Library Examples",
   [ROUTE_CATEGORY.ROUTING]: "Routing Experiments",
 };
+
+export const BUTTON_COLOURS = {
+  SECONDARY: "SECONDARY",
+  SUCCESS: "SUCCESS",
+  DANGER: "DANGER",
+  WARN: "WARN",
+};
