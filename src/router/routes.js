@@ -20,13 +20,6 @@ export default [
     category: ROUTE_CATEGORY.ROOT,
     component: () => import("../views/root/HomePage.vue"),
   },
-  {
-    path: "/svg-imports",
-    name: "SvgImports",
-    displayName: "SVG Imports",
-    category: ROUTE_CATEGORY.ROOT,
-    component: () => import("../views/root/SvgImports.vue"),
-  },
   // {
   //   path: "/pinia-example-advanced",
   //   name: "PiniaExampleAdvanced",

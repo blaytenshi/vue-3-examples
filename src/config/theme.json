@@ -11,6 +11,8 @@
     }
   },
   "brand-a": {
-
+    "button": {
+      "primary": "{{base.colour.blue-500}}"
+    }
   }
 }

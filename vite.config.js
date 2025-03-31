@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
+import path from "node:path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -25,5 +26,11 @@ export default defineConfig({
     },
     reporters: ["verbose", "html"], // should report a verbose report along with an HTML report
     outputFile: "./tests/unit/test-reports/index.html", // HTML test reports to be written to this file
+  },
+  // other configuration
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "src"),
+    },
   },
 });
