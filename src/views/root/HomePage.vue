@@ -13,22 +13,40 @@
       for it to render. There are multiple elements at the 'root', an &lt;h1&gt;,
       2 x &lt;p&gt; tags and then a &lt;ul&gt; tag. Neat, huh?
     </p>
+    <button @click="updateState">
+      Click!
+    </button>
+    <vs-icon
+      :name="iconName"
+      :fill="iconFill"
+      :width="iconWidth"
+      :height="iconHeight"
+    />
+    <img src="../../assets/close.svg">
+    <img src="../../assets/balloon.svg">
   </Container>
 </template>
 
-<script>
+<script setup>
+import { ref } from "vue";
 import Container from "../../components/Container.vue";
 import { CONTAINER_DIRECTIONS } from "../../constants/options.js";
+import VsIcon from "@/components/vs-icon/vs-icon.vue";
 
-export default {
-  name: "HomePage",
-  components: { Container },
-  computed: {
-    CONTAINER_DIRECTIONS() {
-      return CONTAINER_DIRECTIONS;
-    },
-  },
-};
+const iconName = ref("balloon");
+const iconFill = ref("#aabc81");
+const iconWidth = ref("64px");
+const iconHeight = ref("64px");
+
+function updateState() {
+  iconName.value = iconName.value === "close"
+    ? "balloon"
+    : "close";
+  iconFill.value = "#c253a5";
+  iconWidth.value = "24px";
+  iconHeight.value = "24px";
+  console.log("clicked!");
+}
 </script>
 
 <style scoped>
