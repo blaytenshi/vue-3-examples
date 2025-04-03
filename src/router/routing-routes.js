@@ -32,29 +32,30 @@ export const routingRoutes = [
     },
   },
   {
-    path: "/nested-routes-with-parent/users",
-    name: "NestedRoutesWithParentUserList",
-    displayName: "Nested Routes With Parent User",
+    name: "NestedRoutesUserList",
     category: ROUTE_CATEGORY.ROUTING,
+    path: "/nested-routes-with-parent/users",
+    displayName: "Nested Routes With Parent User",
+    component: () => import("../views/routing-examples/nested-routes-with-parent/users-list/index.vue"),
+  },
+  {
+    name: "NestedRoutesUser",
+    path: "/nested-routes-with-parent/users/:username",
+    component: () => import("../views/routing-examples/nested-routes-with-parent/user/index.vue"),
     children: [
       {
-        name: "NestedRoutesWithParentUserList",
-        path: "",
-        component: () => import("../views/routing-examples/nested-routes-with-parent/users-list/index.vue"),
-      },
-      {
         name: "NestedRoutesWithParentUserHome",
-        path: ":userName",
+        path: "",
         component: () => import("../views/routing-examples/nested-routes-with-parent/user-home/index.vue"),
       },
       {
         name: "NestedRoutesWithParentUserPosts",
-        path: ":userName/posts",
+        path: "posts",
         component: () => import("../views/routing-examples/nested-routes-with-parent/user-posts/index.vue"),
       },
       {
-        name: "NestedRoutesWithParentUserProfile",
-        path: ":userName/address",
+        name: "NestedRoutesWithParentUserAddress",
+        path: "address",
         component: () => import("../views/routing-examples/nested-routes-with-parent/user-address/index.vue"),
       },
     ],
