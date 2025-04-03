@@ -13,9 +13,11 @@
       for it to render. There are multiple elements at the 'root', an &lt;h1&gt;,
       2 x &lt;p&gt; tags and then a &lt;ul&gt; tag. Neat, huh?
     </p>
-    <button @click="updateState">
-      Click!
-    </button>
+    <vs-button
+      :colour="BUTTON_COLOURS.SUCCESS"
+      label="Click!"
+      @click="updateState"
+    />
     <vs-icon
       :name="iconName"
       :fill="iconFill"
@@ -32,6 +34,8 @@ import { ref } from "vue";
 import Container from "../../components/Container.vue";
 import { CONTAINER_DIRECTIONS } from "../../constants/options.js";
 import VsIcon from "@/components/vs-icon/vs-icon.vue";
+import VsButton from "@/components/vs-button/vs-button.vue";
+import { BUTTON_COLOURS } from "@/constants/colours.js";
 
 const iconName = ref("balloon");
 const iconFill = ref("#aabc81");
