@@ -27,3 +27,8 @@ export const BUTTON_COLOURS = {
   DANGER: "DANGER",
   WARN: "WARN",
 };
+
+export const ICON_NAMES = {
+  BALLOON: "balloon",
+  CLOSE: "close",
+};

@@ -8,9 +8,10 @@
 
 <script setup>
 import { ref, watchEffect, onMounted } from "vue";
+import { ICON_NAMES } from "@/constants/options.js";
 
 const props = defineProps({
-  name: { type: String, required: true },
+  name: { type: String, required: true, validator: (value) => Object.values(ICON_NAMES).includes(value) },
   width: { type: String, default: "1em" },
   height: { type: String, default: "1em" },
   fill: { type: String, default: "currentColor" },

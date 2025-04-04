@@ -1,4 +1,5 @@
 import VsIcon from "./vs-icon.vue";
+import { ICON_NAMES } from "@/constants/options.js";
 
 export default {
   title: "Atoms / VS Icon",
@@ -6,7 +7,10 @@ export default {
   tags: ["autodocs"],
   argTypes: {
     name: {
-      control: "text",
+      control: {
+        type: "select",
+      },
+      options: Object.values(ICON_NAMES),
       description: "Icon name to be used",
     },
     fill: {
