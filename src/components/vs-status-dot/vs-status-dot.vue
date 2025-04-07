@@ -1,34 +1,32 @@
 <script setup>
-import { computed } from "vue";
 import { BUTTON_COLOURS } from "@/constants/colours.js";
+import { computed } from "vue";
 
 const props = defineProps({
-  label: {
-    type: String,
-    required: true,
-  },
   colour: {
     type: String,
-    default: "blue",
+    required: true,
     validator: (value) => Object.values(BUTTON_COLOURS).includes(value),
   },
 });
 
 const computedClasses = computed(() => ({
-  success: props.colour === BUTTON_COLOURS.SUCCESS,
-  primary: props.colour === BUTTON_COLOURS.PRIMARY,
-  danger: props.colour === BUTTON_COLOURS.DANGER,
-  warning: props.colour === BUTTON_COLOURS.WARNING,
+  [props.colour]: true,
 }));
 </script>
 
 <template>
-  <button :class="computedClasses">
-    {{ label }}
-  </button>
+  <div
+    :class="computedClasses"
+  />
 </template>
 
 <style scoped>
+div {
+  border-radius: 999px;
+  height: 8px;
+  width: 8px;
+}
 .success {
   background-color: #1A8E30;
 }
