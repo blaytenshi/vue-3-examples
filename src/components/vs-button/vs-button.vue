@@ -19,6 +19,7 @@ const computedClasses = computed(() => ({
   primary: props.colour === BUTTON_COLOURS.PRIMARY,
   danger: props.colour === BUTTON_COLOURS.DANGER,
   warning: props.colour === BUTTON_COLOURS.WARNING,
+  medium: true,
 }));
 </script>
 
@@ -29,14 +30,41 @@ const computedClasses = computed(() => ({
 </template>
 
 <style scoped>
+button {
+  box-sizing: border-box;
+}
+button:hover {
+  cursor: pointer;
+}
+.medium {
+  padding: 8px 16px;
+  font-size: 16px;
+}
 .success {
   background-color: #1A8E30;
+  color: white;
 }
 .primary {
-  background-color: #2251BB;
+  background-color: #006BBC;
+  color: white;
+}
+.primary:hover {
+  background-color: #0089F2;
+  color: white;
+}
+.primary:active {
+  background-color: #005CA2;
 }
 .danger {
-  background-color: #CD1E05;
+  background-color: #BD0500;
+  color: white;
+}
+.danger:hover {
+  background-color: #F20800;
+  color: white;
+}
+.danger:active {
+  background-color: #870400;
 }
 .warning {
   background-color: #FFB700;

@@ -25,6 +25,28 @@ export default {
 
 export const Primary = {
   args: {
-    label: "Hellos",
+    label: "Primary",
+    colour: BUTTON_COLOURS.PRIMARY,
+  },
+};
+
+export const Success = {
+  args: {
+    label: "Success",
+    colour: BUTTON_COLOURS.SUCCESS,
+  },
+};
+
+export const Warning = {
+  args: {
+    label: "Warning",
+    colour: BUTTON_COLOURS.WARNING,
+  },
+};
+
+export const Danger = {
+  args: {
+    label: "Danger",
+    colour: BUTTON_COLOURS.DANGER,
   },
 };
