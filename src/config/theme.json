@@ -15,6 +15,13 @@
       "primary": "{{base.colour.blue-500}}"
     }
   },
+  "component": {
+    "button": {
+      "primary": {
+        "backgroundColour": "--ds-primary-500"
+      }
+    }
+  },
   "colours": {
     "primary-050": "#C9E8FF",
     "primary-100": "#94D1FF",

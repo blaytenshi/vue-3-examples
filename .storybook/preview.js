@@ -1,4 +1,6 @@
 /** @type { import('@storybook/vue3').Preview } */
+import loadDesignTokens from "@/utils/load-design-tokens.js";
+
 const preview = {
   parameters: {
     controls: {
@@ -9,5 +11,7 @@ const preview = {
     },
   },
 };
+
+loadDesignTokens();
 
 export default preview;

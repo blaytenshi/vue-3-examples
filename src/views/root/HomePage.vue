@@ -18,6 +18,11 @@
       label="Click!"
       @click="updateState"
     />
+    <vs-button
+      :colour="BUTTON_COLOURS.PRIMARY"
+      label="Primary Button"
+      @click="updateState"
+    />
     <vs-icon
       :name="iconName"
       :fill="iconFill"

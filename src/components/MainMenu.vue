@@ -3,9 +3,6 @@ import Container from "./Container.vue";
 import { CONTAINER_DIRECTIONS, ROUTE_CATEGORY, ROUTE_CATEGORY_OPTIONS } from "../constants/options.js";
 
 import routes from "../router/routes.js";
-
-console.log("routes", routes.filter(route => route.category === ROUTE_CATEGORY.FUNDAMENTALS));
-
 </script>
 
 <template>

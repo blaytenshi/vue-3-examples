@@ -45,7 +45,7 @@ button:hover {
   color: white;
 }
 .primary {
-  background-color: #006BBC;
+  background-color: var(--ds-primary-500);
   color: white;
 }
 .primary:hover {
