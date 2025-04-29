@@ -64,4 +64,11 @@ export const fundamentalsRoutes = [
     category: ROUTE_CATEGORY.FUNDAMENTALS,
     component: () => import("../views/vue-fundamentals/el-root-dom-element-template-refs/index.vue"),
   },
+  {
+    path: "/vue-props",
+    name: "VueProps",
+    displayName: "Vue Props",
+    category: ROUTE_CATEGORY.FUNDAMENTALS,
+    component: () => import("../views/vue-fundamentals/vue-props/index.vue"),
+  },
 ];
