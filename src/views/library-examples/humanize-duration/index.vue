@@ -3,10 +3,16 @@ import Tag from "../../../components/Tag.vue";
 import humanizeDuration from "humanize-duration";
 import myHumanizeDuration, { DURATION_FORMAT } from "./humanizeDuration.js";
 import Container from "../../../components/Container.vue";
-import { CONTAINER_DIRECTIONS } from "../../../constants/options.js";
+import { CONTAINER_DIRECTIONS } from "@/constants/options.js";
 
-const duration = 1200002000;
-const duration2 = 1200002200;
+const ms = 1;
+const second = 1000 * ms;
+const minute = 60 * second;
+const hour = 60 * minute;
+
+const eightHour = 8 * hour;
+const duration = 1200002000; // 1 week, 6 days, 21 hours, 20 minutes, 2 seconds
+const duration2 = 1200002200; // 1 week 6 days 21 hours 20 minutes 2.2 seconds
 
 </script>
 

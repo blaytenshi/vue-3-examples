@@ -44,6 +44,7 @@ Below is a list of dependencies of the project.
 | @vee-validate/rules           | Extra rules for Vee-validate the validation library     | App  |
 | axios                         | Industry standard library used to make requests         | App  |
 | date-fns                      | Very common library for manipulating dates              | App  |
+| date-fns-tz                   | Library for manipulating dates with timezones           | App  |
 | humanize-duration             | Library to format duration into human readable format   | App  |
 | lodash                        | Useful functions                                        | App  |
 | pinia                         | State management for Vue                                | App  |

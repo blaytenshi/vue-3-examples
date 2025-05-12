@@ -135,6 +135,22 @@
     "grey-950": "#030712",
     "white": "#FFFAF0",
     "black": "#2C2C2C"
+  },
+  "spacing": {
+    "2px": "0.125rem",
+    "4px": "0.25rem",
+    "8px": "0.5rem",
+    "16px": "1rem",
+    "20px": "1.25rem",
+    "24px": "1.5rem",
+    "28px": "1.75rem",
+    "32px": "2rem",
+    "40px": "2.5rem",
+    "48px": "3rem",
+    "56px": "3.5rem",
+    "64px": "4rem",
+    "80px": "5rem",
+    "96px": "6rem"
   }
 }
 
