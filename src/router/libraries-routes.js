@@ -78,4 +78,11 @@ export const librariesRoutes = [
     category: ROUTE_CATEGORY.LIBRARIES,
     component: () => import("../views/library-examples/date-fns/index.vue"),
   },
+  {
+    path: "/auth0-universal-login",
+    name: "Auth0UniversalLogin",
+    displayName: "Auth0 Universal Login",
+    category: ROUTE_CATEGORY.LIBRARIES,
+    component: () => import("../views/library-examples/auth0-universal-login/index.vue"),
+  },
 ];
