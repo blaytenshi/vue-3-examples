@@ -16,6 +16,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@auth0/auth0-vue": "^2.4.0",
     "@floating-ui/vue": "^1.1.6",
     "@storybook/addon-actions": "^8.6.4",
     "@vee-validate/rules": "^4.15.0",
