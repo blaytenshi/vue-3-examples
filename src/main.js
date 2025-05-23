@@ -14,8 +14,10 @@ const bootApp = () => {
 
   const app = createApp(App);
 
-  app.use(initAuth0());
   app.use(router);
+  // Needs to be declared AFTER the vue-router
+  // More info here: https://github.com/auth0/auth0-vue/blob/main/EXAMPLES.md#1-protecting-a-route-when-using-multiple-vue-applications
+  app.use(initAuth0());
   app.use(pinia);
 
   app.mount("#app");

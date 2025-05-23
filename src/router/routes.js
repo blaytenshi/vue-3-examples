@@ -27,6 +27,13 @@ export default [
   //   component: () => import("../views/pinia-example-advanced/index.vue"),
   // },
   {
+    path: "/callback",
+    name: "Auth0Callback",
+    displayName: "Auth0 Callback",
+    category: ROUTE_CATEGORY.ROOT,
+    component: () => import("../views/root/Auth0Callback.vue"),
+  },
+  {
     path: "/:pathMatch(.*)*",
     name: "NotFound",
     displayName: "Not Found",
