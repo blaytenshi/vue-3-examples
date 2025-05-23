@@ -41,7 +41,8 @@ const multiSelected = ref([]);
       <h2>Checkboxes</h2>
       <p>
         For a checkbox component, in order to use vmodel, you need to first group every input that is part of the checkbox
-        under a value, eg "checkedNames"
+        under a value, eg "checkedNames". If you add to the checkedNames array ref with a corresponding value, it will
+        'check' those checkboxes.
       </p>
       <input
         v-model="checkedNames"
@@ -67,7 +68,7 @@ const multiSelected = ref([]);
       <h2>Radio Buttons</h2>
       <p>
         For radio buttons they're similar to the checkboxes, however the v-model points to a single ref value (not an array).
-        Only the value of the input will be put in the ref.
+        Only the value of the selected radio button will be set in the ref.
       </p>
       <div>Picked: {{ picked }}</div>
       <input
@@ -88,8 +89,9 @@ const multiSelected = ref([]);
     <div>
       <h2>Select</h2>
       <p>
-        For the select element you can attach the vmodel directly onto it and whatever option is chosen will have its content
-        put into the ref'd value (A, B or C). You can provide a custom value specifying a value prop on the option tag.
+        For the select element you attach the vmodel directly onto the select element (not on the option). By default,
+        whatever option is chosen will have be set in the ref (A, B or C). Optionally, if you add a value attribute to
+        the option element, you can set a custom value in the ref. This is default select behaviour.
       </p>
       <div>Selected: {{ selected }}</div>
       <select v-model="selected">
@@ -113,22 +115,23 @@ const multiSelected = ref([]);
     <div>
       <h2>Multi Select</h2>
       <p>
-        For a multi select element you can do the same as a regular select element. Attach the vmodel directly onto it
-        however the difference is the values are put into an array and whatever values are in the array get matched with
-        whatever selected option you've chosen.
+        For a multi select element you can do the same as a regular select element. Attach the vmodel directly on to the
+        select element. However, the difference is that the selected values are put into an array instead of a single
+        value. Whatever values are in the array get matched with whatever selected option you've chosen.
       </p>
       <div>Selected: {{ multiSelected }}</div>
       <select
         v-model="multiSelected"
         multiple
       >
-        <option value="Apple">
+        <!-- The case of the value matters! "apple" is NOT the same as "Apple"! -->
+        <option value="apple">
           Apple
         </option>
-        <option value="Banana">
+        <option value="banana">
           Banana
         </option>
-        <option value="Cantaloupe">
+        <option value="cantaloupe">
           Cantaloupe
         </option>
       </select>
