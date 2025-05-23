@@ -10,11 +10,20 @@ const isLoading = auth0.isLoading;
 const user = auth0.user;
 
 const handleLoginClick = () => {
-  auth0.loginWithRedirect();
+  auth0.loginWithRedirect({
+    appState: {
+      target: "/pinia-example",
+    },
+  });
 };
 
 const handleLogoutClick = () => {
-  auth0.logout();
+  auth0.logout({
+    logoutParams: {
+      // must be a full URL and NOT a path! And must be set in auth0 Application of Allowed Logout URLs
+      returnTo: "http://localhost:3030/losing-reactivity",
+    },
+  });
 };
 </script>
 

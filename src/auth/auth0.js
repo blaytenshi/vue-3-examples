@@ -8,8 +8,11 @@ export function initAuth0() {
       domain: "dev-76xdkh7gv88mcbr5.us.auth0.com",
       clientId: "iSyvYOcef2q8VpjwoUDtRIXVbIcshK2L",
       authorizationParams: {
-        redirect_uri: "http://localhost:3030",
+        // needs to be added to the Allowed Callback URL list!
+        redirect_uri: `${window.location.origin}/callback`,
       },
+      cacheLocation: "localstorage",
+      useRefreshTokens: true,
     });
   }
 
