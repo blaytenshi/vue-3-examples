@@ -78,4 +78,11 @@ export const fundamentalsRoutes = [
     category: ROUTE_CATEGORY.FUNDAMENTALS,
     component: () => import("../views/vue-fundamentals/vue-attrs/index.vue"),
   },
+  {
+    path: "/emits",
+    name: "VueEmits",
+    displayName: "Vue Emits",
+    category: ROUTE_CATEGORY.FUNDAMENTALS,
+    component: () => import("../views/vue-fundamentals/emits/index.vue"),
+  },
 ];
