@@ -1,18 +1,31 @@
 <script setup>
 import List from "./list.vue";
-import { usersList } from "../../../utils/fixed-values.js";
 import { useSearchListStore } from "./search-list-store.js";
-
 import { storeToRefs } from "pinia";
 import Container from "../../../components/Container.vue";
-import { CONTAINER_DIRECTIONS } from "../../../constants/options.js";
+import { CONTAINER_DIRECTIONS, LIST_COMPONENT_MODES } from "@/constants/options.js";
+import { fetchLargeProfiles } from "@/api/index.js";
+import { ref } from "vue";
+
+const usersList = ref([]);
+
+const getUsersList = async () => {
+  const fetchedLargeProfiles = await fetchLargeProfiles();
+
+  // format the list to { label, value }
+  usersList.value = fetchedLargeProfiles.map((profile) => ({
+    label: `${profile.firstName} ${profile.lastName}`,
+    value: profile.id,
+  }));
+};
 
 const searchListStore = useSearchListStore();
 
 const { selectedValues } = storeToRefs(searchListStore);
 
-const { handleItemSelect } = searchListStore;
+const { handleListItemSelect } = searchListStore;
 
+getUsersList();
 </script>
 
 <template>
@@ -36,12 +49,42 @@ const { handleItemSelect } = searchListStore;
       For fun, the list is routed through a Pinia store just so i can see how the data and data-handling functions need
       to be wired back into the component and subsequent child components.
     </p>
+    <h2>Multi Select Mode with Search</h2>
+    <p>Selected Items: {{ selectedValues }}</p>
+    <List
+      :items="usersList"
+      :values="selectedValues"
+      :searchable="true"
+      :mode="LIST_COMPONENT_MODES.MULTI_SELECT"
+      search-placeholder-text="Search Name..."
+      @handle-list-item-select="handleListItemSelect"
+    />
+    <h2>Single Select Mode with Search</h2>
+    <p>Selected Item: {{ selectedValues }}</p>
     <List
       :items="usersList"
       :values="selectedValues"
       :searchable="true"
       search-placeholder-text="Search Name..."
-      :handle-item-select="handleItemSelect"
+      @handle-list-item-select="handleListItemSelect"
+    />
+    <h2>Multi Select Mode without Search</h2>
+    <p>Selected Items: {{ selectedValues }}</p>
+    <List
+      :items="usersList"
+      :values="selectedValues"
+      :mode="LIST_COMPONENT_MODES.MULTI_SELECT"
+      :searchable="false"
+      @handle-list-item-select="handleListItemSelect"
+    />
+    <h2>Single Select Mode without Search</h2>
+    <p>Selected Items: {{ selectedValues }}</p>
+    <List
+      :items="usersList"
+      :values="selectedValues"
+      :mode="LIST_COMPONENT_MODES.SINGLE_SELECT"
+      :searchable="false"
+      @handle-list-item-select="handleListItemSelect"
     />
   </Container>
 </template>

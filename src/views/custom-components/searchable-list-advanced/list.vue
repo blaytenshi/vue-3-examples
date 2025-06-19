@@ -1,38 +1,72 @@
 <script setup>
-import { array, arrayOf, bool, func, string } from "vue-types";
 import ListItem from "./list-item.vue";
 import { computed, reactive } from "vue";
+import { LIST_COMPONENT_MODES } from "@/constants/options.js";
 
 const props = defineProps({
-  items: arrayOf({
-    label: string(),
-    value: string(),
-  }).isRequired,
-  values: array().isRequired,
-  searchable: bool().def(true),
-  searchPlaceholderText: string(),
-  handleItemSelect: func(),
+  items: { type: Array, required: true },
+  // label: string(),
+  // value: string(),
+  values: { type: Array, required: true },
+  searchable: { type: Boolean, default: true },
+  searchPlaceholderText: { type: String, default: "Search..." },
+  maxItemsShown: { type: Number, default: 20 },
+  mode: { type: String, default: LIST_COMPONENT_MODES.SINGLE_SELECT },
 });
+
+const emit = defineEmits([
+  "handleListItemSelect",
+]);
 
 const state = reactive({
   searchValue: "",
+  selectAll: false,
 });
 
-const showSearchList = computed(() => !!(props.searchable && state.searchValue));
+const filteredList = computed(() => {
+  if (props.searchable && state.searchValue.length >= 2) {
+    const lowercaseSearchValue = state.searchValue.toLowerCase();
+    return props.items.filter(({ label }) => label.toLowerCase().includes(lowercaseSearchValue));
+  }
 
-const computedItemsList = computed(() => {
-  const valuesSet = new Set(props.values);
-
-  return props.items.map((item) => (valuesSet.has(item.value)
-    ? { ...item, checked: true }
-    : { ...item, checked: false }));
+  return props.items;
 });
 
-const searchedItemsList = computed(() => {
-  const lowercaseSearchValue = state.searchValue.toLowerCase();
+const checkedFilteredList = computed(() => filteredList.value.filter((item) => props.values.includes(item.value)).map((item) => ({
+  ...item,
+  checked: true,
+})));
 
-  return computedItemsList.value.filter(({ label }) => label.toLowerCase().includes(lowercaseSearchValue));
+const uncheckedFilteredList = computed(() => {
+  const untruncated = filteredList.value.filter((item) => !props.values.includes(item.value)).map((item) => ({
+    ...item,
+    checked: false,
+  }));
+
+  if (props.searchable) {
+    return untruncated.slice(0, 20);
+  }
+  return untruncated;
 });
+
+const singleList = computed(() => {
+  if (props.searchable) {
+    return filteredList.value.slice(0, 20);
+  }
+  return filteredList.value;
+});
+
+const handleItemSelect = (emittedItemValue) => {
+  if (props.mode === LIST_COMPONENT_MODES.SINGLE_SELECT) {
+    return emit("handleListItemSelect", [emittedItemValue]);
+  }
+
+  if (props.values.includes(emittedItemValue)) {
+    return emit("handleListItemSelect", props.values.filter(values => values !== emittedItemValue));
+  }
+
+  return emit("handleListItemSelect", [...props.values, emittedItemValue]);
+};
 
 const handleSearchValueUpdate = (emittedInputValue) => {
   state.searchValue = emittedInputValue.target.value;
@@ -42,6 +76,16 @@ const handleClearSearchValue = () => {
   state.searchValue = "";
 };
 
+const handleSelectAll = () => {
+  if (state.selectAll) {
+    state.selectAll = false;
+    return emit("handleListItemSelect", []);
+  }
+
+  state.selectAll = true;
+  const valuesToAdd = filteredList.value.map(item => item.value);
+  return emit("handleListItemSelect", valuesToAdd);
+};
 </script>
 
 <template>
@@ -57,12 +101,42 @@ const handleClearSearchValue = () => {
         Clear
       </button>
     </div>
-    <ul class="list-wrapper">
+    <div v-if="mode === LIST_COMPONENT_MODES.MULTI_SELECT">
+      <button @click="handleSelectAll">
+        {{ state.selectAll ? 'Unselect' : 'Select' }} All ({{ items.length }})
+      </button>
+    </div>
+    <ul
+      v-if="mode === LIST_COMPONENT_MODES.MULTI_SELECT"
+      class="list-wrapper"
+    >
+      <!-- Checked Items List -->
       <ListItem
-        v-for="item in showSearchList ? searchedItemsList : computedItemsList"
+        v-for="item in checkedFilteredList"
         :key="item.value"
         :item="item"
-        :on-item-select="handleItemSelect"
+        :show-checked="true"
+        @on-item-select="handleItemSelect"
+      />
+      <hr v-if="checkedFilteredList.length">
+      <!-- Unchecked Items List -->
+      <ListItem
+        v-for="item in uncheckedFilteredList"
+        :key="item.value"
+        :item="item"
+        :show-checked="true"
+        @on-item-select="handleItemSelect"
+      />
+    </ul>
+    <ul
+      v-if="mode === LIST_COMPONENT_MODES.SINGLE_SELECT"
+      class="list-wrapper"
+    >
+      <ListItem
+        v-for="item in singleList"
+        :key="item.value"
+        :item="item"
+        @on-item-select="handleItemSelect"
       />
     </ul>
   </div>
