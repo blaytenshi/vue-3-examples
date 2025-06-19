@@ -32,3 +32,8 @@ export const ICON_NAMES = {
   BALLOON: "balloon",
   CLOSE: "close",
 };
+
+export const LIST_COMPONENT_MODES = {
+  MULTI_SELECT: "multi-select",
+  SINGLE_SELECT: "single-select",
+};
