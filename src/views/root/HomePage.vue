@@ -29,15 +29,21 @@
       :width="iconWidth"
       :height="iconHeight"
     />
-    <img src="../../assets/close.svg">
-    <img src="../../assets/balloon.svg">
+    <img
+      src="../../assets/close.svg"
+      width="256px"
+    >
+    <img
+      src="../../assets/balloon.svg"
+      width="256px"
+    >
   </Container>
 </template>
 
 <script setup>
 import { ref } from "vue";
 import Container from "../../components/Container.vue";
-import { CONTAINER_DIRECTIONS } from "../../constants/options.js";
+import { CONTAINER_DIRECTIONS } from "@/constants/options.js";
 import VsIcon from "@/components/vs-icon/vs-icon.vue";
 import VsButton from "@/components/vs-button/vs-button.vue";
 import { BUTTON_COLOURS } from "@/constants/colours.js";
