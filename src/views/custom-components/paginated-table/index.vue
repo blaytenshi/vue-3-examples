@@ -1,10 +1,10 @@
 <script setup>
-import { fetchPaginatedItems } from "../../../api/index.js";
+import { fetchPaginatedItems } from "@/api/local-fake-api.js";
 import { reactive } from "vue";
 import GenericTable from "./generic-table/index.vue";
-import { getTableProperties } from "../../../utils/get-table-properties.js";
-import Container from "../../../components/Container.vue";
-import { CONTAINER_DIRECTIONS } from "../../../constants/options.js";
+import { getTableProperties } from "@/utils/get-table-properties.js";
+import Container from "@/components/Container.vue";
+import { CONTAINER_DIRECTIONS } from "@/constants/options.js";
 
 const state = reactive({
   tableData: [],

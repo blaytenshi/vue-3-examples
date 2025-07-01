@@ -15,9 +15,9 @@
 
 <script>
 import { ref, onMounted } from "vue";
-import { fetchProfiles } from "../../api/index.js";
-import Container from "../../components/Container.vue";
-import { CONTAINER_DIRECTIONS } from "../../constants/options.js";
+import { fetchProfiles } from "@/api/local-fake-api.js";
+import Container from "@/components/Container.vue";
+import { CONTAINER_DIRECTIONS } from "@/constants/options.js";
 
 export default {
   name: "CompositionApiBasicsPage",
