@@ -1,9 +1,9 @@
 <script setup>
 import LocalListSearch from "./local-list-search.vue";
-import { fetchProfiles } from "../../../api/index.js";
+import { fetchProfiles } from "@/api/local-fake-api.js";
 import { reactive } from "vue";
-import Container from "../../../components/Container.vue";
-import { CONTAINER_DIRECTIONS } from "../../../constants/options.js";
+import Container from "@/components/Container.vue";
+import { CONTAINER_DIRECTIONS } from "@/constants/options.js";
 
 const state = reactive({
   filteredUserList: [],

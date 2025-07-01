@@ -2,9 +2,9 @@
 import List from "./list.vue";
 import { useSearchListStore } from "./search-list-store.js";
 import { storeToRefs } from "pinia";
-import Container from "../../../components/Container.vue";
+import Container from "@/components/Container.vue";
 import { CONTAINER_DIRECTIONS, LIST_COMPONENT_MODES } from "@/constants/options.js";
-import { fetchLargeProfiles } from "@/api/index.js";
+import { fetchLargeProfiles } from "@/api/local-fake-api.js";
 import { ref } from "vue";
 
 const usersList = ref([]);

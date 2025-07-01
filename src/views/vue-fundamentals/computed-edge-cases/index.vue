@@ -1,8 +1,8 @@
 <script>
-import { fetchProfiles } from "../../../api/index.js";
+import { fetchProfiles } from "@/api/local-fake-api.js";
 import InnerComponent from "./inner-component.vue";
-import Container from "../../../components/Container.vue";
-import { CONTAINER_DIRECTIONS } from "../../../constants/options.js";
+import Container from "@/components/Container.vue";
+import { CONTAINER_DIRECTIONS } from "@/constants/options.js";
 
 export default {
   components: { Container, InnerComponent },

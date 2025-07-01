@@ -2,7 +2,7 @@
 import { reactive, ref } from "vue";
 import ProfilesList from "./profiles-list.vue";
 import ProductsList from "./products-list.vue";
-import { fetchProducts, fetchProfiles } from "../../../api/index.js";
+import { fetchProducts, fetchProfiles } from "@/api/local-fake-api.js";
 
 const myRef = ref("Hi there");
 
