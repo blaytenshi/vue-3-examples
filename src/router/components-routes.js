@@ -50,4 +50,11 @@ export const componentsRoutes = [
     category: ROUTE_CATEGORY.COMPONENTS,
     component: () => import("../views/custom-components/custom-table/index.vue"),
   },
+  {
+    path: "/bulk-assign-tasks",
+    name: "BulkAssignTasks",
+    displayName: "Bulk Assign Tasks",
+    category: ROUTE_CATEGORY.COMPONENTS,
+    component: () => import("../views/custom-components/bulk-assign-tasks/index.vue"),
+  },
 ];

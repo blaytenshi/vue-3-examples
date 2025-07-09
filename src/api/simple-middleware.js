@@ -2,7 +2,7 @@ import axios from "axios";
 
 const simpleMiddlewareApi = axios.create({
   baseURL: "http://localhost:9091",
-  timeout: 1500,
+  timeout: 30000,
 });
 
 simpleMiddlewareApi.interceptors.request.use(config => {
