@@ -1,4 +1,5 @@
 import { ROUTE_CATEGORY } from "../constants/options.js";
+import { authGuard } from "@auth0/auth0-vue";
 
 export const librariesRoutes = [
   {
@@ -84,5 +85,20 @@ export const librariesRoutes = [
     displayName: "Auth0 Universal Login",
     category: ROUTE_CATEGORY.LIBRARIES,
     component: () => import("../views/library-examples/auth0-universal-login/index.vue"),
+  },
+  {
+    path: "/auth0-dashboard",
+    name: "Auth0Dashboard",
+    displayName: "Auth0 Dashboard",
+    category: ROUTE_CATEGORY.LIBRARIES,
+    component: () => import("../views/library-examples/auth0-universal-login/dashboard.vue"),
+    beforeEnter: authGuard,
+  },
+  {
+    path: "/callback",
+    name: "Auth0Callback",
+    displayName: "Auth0 Callback",
+    category: ROUTE_CATEGORY.LIBRARIES,
+    component: () => import("../views/library-examples/auth0-universal-login/auth-0-callback.vue"),
   },
 ];

@@ -5,23 +5,10 @@ import Container from "@/components/Container.vue";
 
 const auth0 = useAuth0();
 
-const isAuthenticated = auth0.isAuthenticated;
-const isLoading = auth0.isLoading;
-const user = auth0.user;
-
 const handleLoginClick = () => {
   auth0.loginWithRedirect({
     appState: {
-      target: "/pinia-example",
-    },
-  });
-};
-
-const handleLogoutClick = () => {
-  auth0.logout({
-    logoutParams: {
-      // must be a full URL and NOT a path! And must be set in auth0 Application of Allowed Logout URLs
-      returnTo: "http://localhost:3030/losing-reactivity",
+      target: "/auth0-dashboard",
     },
   });
 };
@@ -39,24 +26,12 @@ const handleLogoutClick = () => {
       If you refresh the page and you are suddenly logged out. Try allowing third party cookies or (if
       you're using the Brave browser) turn the Brave Shields down.
     </p>
-    <div v-if="isLoading">
-      Loading...
-    </div>
-    <div v-else>
-      <div>Current user: {{ user ? user : 'None' }}</div>
-      <button
-        v-if="!isAuthenticated"
-        @click="handleLoginClick"
-      >
-        Login with Auth0 Universal Login!
-      </button>
-      <button
-        v-else
-        @click="handleLogoutClick"
-      >
-        Logout!
-      </button>
-    </div>
+    <button @click="handleLoginClick">
+      Login with Auth0 Universal Login!
+    </button>
+    <button @click="handleRegisterClick">
+      Register
+    </button>
   </Container>
 </template>
 
