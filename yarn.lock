@@ -1683,7 +1683,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vee-validate/rules@npm:^4.15.0":
+"@vee-validate/rules@npm:^4.15.1":
   version: 4.15.1
   resolution: "@vee-validate/rules@npm:4.15.1"
   dependencies:
@@ -6310,7 +6310,7 @@ __metadata:
     "@storybook/vue3-vite": "npm:^8.6.4"
     "@stylistic/eslint-plugin": "npm:^1.7.0"
     "@types/node": "npm:^22.9.0"
-    "@vee-validate/rules": "npm:^4.15.0"
+    "@vee-validate/rules": "npm:^4.15.1"
     "@vitejs/plugin-vue": "npm:^5.0.4"
     "@vitest/coverage-istanbul": "npm:^1.6.0"
     "@vitest/ui": "npm:^1.6.0"

@@ -5,10 +5,12 @@ import { createPinia } from "pinia";
 import { initialiseThemes } from "./utils/load-themes";
 import loadDesignTokens from "@/utils/load-design-tokens.js";
 import { initAuth0 } from "@/auth/auth0.js";
+import loadVeeValidateGlobalValidatorRules from "@/views/library-examples/vee-validate/load-vee-validate-global-validator-rules.js";
 
 const pinia = createPinia();
 
 const bootApp = () => {
+  loadVeeValidateGlobalValidatorRules();
   loadDesignTokens();
   initialiseThemes();
 
