@@ -85,4 +85,11 @@ export const fundamentalsRoutes = [
     category: ROUTE_CATEGORY.FUNDAMENTALS,
     component: () => import("../views/vue-fundamentals/emits/index.vue"),
   },
+  {
+    path: "/downloading-csv-files",
+    name: "DownloadingCsvFiles",
+    displayName: "Downloading Csv Files",
+    category: ROUTE_CATEGORY.FUNDAMENTALS,
+    component: () => import("../views/vue-fundamentals/download-csv/index.vue"),
+  },
 ];
