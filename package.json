@@ -21,6 +21,7 @@
     "@storybook/addon-actions": "^8.6.4",
     "@vee-validate/rules": "^4.15.1",
     "axios": "1.8.4",
+    "case": "^1.6.3",
     "date-fns": "^4.1.0",
     "date-fns-tz": "^3.2.0",
     "humanize-duration": "^3.32.1",
