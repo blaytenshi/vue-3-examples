@@ -101,4 +101,11 @@ export const librariesRoutes = [
     category: ROUTE_CATEGORY.LIBRARIES,
     component: () => import("../views/library-examples/auth0-universal-login/auth-0-callback.vue"),
   },
+  {
+    path: "/case-library-examples",
+    name: "CaseLibraryExamples",
+    displayName: "Case Library Examples",
+    category: ROUTE_CATEGORY.LIBRARIES,
+    component: () => import("../views/library-examples/case-library-examples/index.vue"),
+  },
 ];
