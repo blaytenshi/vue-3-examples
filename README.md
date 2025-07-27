@@ -39,6 +39,7 @@ Below is a list of dependencies of the project.
 
 | Dependency Name               | Description                                             | Type |
 |:------------------------------|:--------------------------------------------------------|:-----|
+| @auth0/auth0-vue              | Auth0 library for Vue                                   | App  |
 | @floating-ui/vue              | Library for building popper elements in the browser     | App  |
 | @storybook/addon-actions      | Actions addon for Storybook                             | App  |
 | @vee-validate/rules           | Extra rules for Vee-validate the validation library     | App  |
