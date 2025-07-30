@@ -2772,6 +2772,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"echarts@npm:^5.6.0":
+  version: 5.6.0
+  resolution: "echarts@npm:5.6.0"
+  dependencies:
+    tslib: "npm:2.3.0"
+    zrender: "npm:5.6.1"
+  checksum: 10c0/6d6a2ee88534d1ff0433e935c542237b9896de1c94959f47ebc7e0e9da26f59bf11c91ed6fc135b62ad2786c779ee12bc536fa481e60532dad5b6a2f5167e9ea
+  languageName: node
+  linkType: hard
+
 "electron-to-chromium@npm:^1.5.173":
   version: 1.5.182
   resolution: "electron-to-chromium@npm:1.5.182"
@@ -5855,6 +5865,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tslib@npm:2.3.0":
+  version: 2.3.0
+  resolution: "tslib@npm:2.3.0"
+  checksum: 10c0/a845aed84e7e7dbb4c774582da60d7030ea39d67307250442d35c4c5dd77e4b44007098c37dd079e100029c76055f2a362734b8442ba828f8cc934f15ed9be61
+  languageName: node
+  linkType: hard
+
 "tslib@npm:^2.0.1, tslib@npm:^2.1.0":
   version: 2.8.1
   resolution: "tslib@npm:2.8.1"
@@ -6251,6 +6268,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"vue-demi@npm:^0.13.11":
+  version: 0.13.11
+  resolution: "vue-demi@npm:0.13.11"
+  peerDependencies:
+    "@vue/composition-api": ^1.0.0-rc.1
+    vue: ^3.0.0-0 || ^2.6.0
+  peerDependenciesMeta:
+    "@vue/composition-api":
+      optional: true
+  bin:
+    vue-demi-fix: bin/vue-demi-fix.js
+    vue-demi-switch: bin/vue-demi-switch.js
+  checksum: 10c0/8f1a38e41e3dd0a4821c87231c664dcc00e6dbf5eecd3de397b7ddb6ae01f173aed5385c55a3c3239be36145742f1a5be407662fc67f9c4515ea691dd0ac93e1
+  languageName: node
+  linkType: hard
+
 "vue-docgen-api@npm:^4.75.1":
   version: 4.79.2
   resolution: "vue-docgen-api@npm:4.79.2"
@@ -6270,6 +6303,22 @@ __metadata:
   peerDependencies:
     vue: ">=2"
   checksum: 10c0/c992cc5f34b0666f266850fd1a0c48dc118b4ca8a3b31ec2a42bd3ca8c02d9c654a1b39a27059bdeeef9de5f8730ead648f2eee31f66f70aec78105e908ce08c
+  languageName: node
+  linkType: hard
+
+"vue-echarts@npm:^7.0.3":
+  version: 7.0.3
+  resolution: "vue-echarts@npm:7.0.3"
+  dependencies:
+    vue-demi: "npm:^0.13.11"
+  peerDependencies:
+    "@vue/runtime-core": ^3.0.0
+    echarts: ^5.5.1
+    vue: ^2.7.0 || ^3.1.1
+  peerDependenciesMeta:
+    "@vue/runtime-core":
+      optional: true
+  checksum: 10c0/9c52c930d2ad2d786cf01b7d13fdc3cff8b6d086335bd25b59cfa13350bb6856e7eb03e28de3c8832d780645cf808808e087f762dc500e0069086e9b623d9f0c
   languageName: node
   linkType: hard
 
@@ -6325,6 +6374,7 @@ __metadata:
     case: "npm:^1.6.3"
     date-fns: "npm:^4.1.0"
     date-fns-tz: "npm:^3.2.0"
+    echarts: "npm:^5.6.0"
     eslint: "npm:^8.57.0"
     eslint-plugin-storybook: "npm:^0.11.4"
     eslint-plugin-vue: "npm:^9.22.0"
@@ -6338,6 +6388,7 @@ __metadata:
     vite: "npm:5.4.16"
     vitest: "npm:^1.6.1"
     vue: "npm:^3.5.13"
+    vue-echarts: "npm:^7.0.3"
     vue-router: "npm:^4.5.0"
     vue-types: "npm:^5.1.3"
     yup: "npm:^1.6.1"
@@ -6565,5 +6616,14 @@ __metadata:
   version: 3.25.76
   resolution: "zod@npm:3.25.76"
   checksum: 10c0/5718ec35e3c40b600316c5b4c5e4976f7fee68151bc8f8d90ec18a469be9571f072e1bbaace10f1e85cf8892ea12d90821b200e980ab46916a6166a4260a983c
+  languageName: node
+  linkType: hard
+
+"zrender@npm:5.6.1":
+  version: 5.6.1
+  resolution: "zrender@npm:5.6.1"
+  dependencies:
+    tslib: "npm:2.3.0"
+  checksum: 10c0/dc1cc570054640cbd8fbb7b92e6252f225319522bfe3e8dc8bf02cc02d414e00a4c8d0a6f89bfc9d96e5e9511fdca94dd3d06bf53690df2b2f12b0fc560ac307
   languageName: node
   linkType: hard
