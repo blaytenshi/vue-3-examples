@@ -108,4 +108,11 @@ export const librariesRoutes = [
     category: ROUTE_CATEGORY.LIBRARIES,
     component: () => import("../views/library-examples/case-library-examples/index.vue"),
   },
+  {
+    path: "/vue-echarts-example",
+    name: "VueEChartsExample",
+    displayName: "Vue ECharts Example",
+    category: ROUTE_CATEGORY.LIBRARIES,
+    component: () => import("../views/library-examples/vue-echarts-example/index.vue"),
+  },
 ];
