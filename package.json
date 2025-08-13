@@ -20,6 +20,8 @@
     "@floating-ui/vue": "^1.1.6",
     "@storybook/addon-actions": "^8.6.4",
     "@vee-validate/rules": "^4.15.1",
+    "@vueuse/components": "^13.6.0",
+    "@vueuse/core": "^13.6.0",
     "axios": "1.8.4",
     "case": "^1.6.3",
     "date-fns": "^4.1.0",

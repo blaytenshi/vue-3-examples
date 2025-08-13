@@ -115,4 +115,11 @@ export const librariesRoutes = [
     category: ROUTE_CATEGORY.LIBRARIES,
     component: () => import("../views/library-examples/vue-echarts-example/index.vue"),
   },
+  {
+    path: "/vueuse-use-virtual-list",
+    name: "VueUseUseVirtualList",
+    displayName: "VueUse useVirtualList",
+    category: ROUTE_CATEGORY.LIBRARIES,
+    component: () => import("../views/library-examples/vueuse-use-virtual-list/index.vue"),
+  },
 ];
