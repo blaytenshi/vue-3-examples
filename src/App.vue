@@ -1,13 +1,17 @@
 <template>
-  <Container>
-    <MainMenu />
-    <router-view />
-  </Container>
+  <TwoColumnLayout>
+    <template #sidebar>
+      <MainMenu />
+    </template>
+    <template #default>
+      <router-view />
+    </template>
+  </TwoColumnLayout>
 </template>
 
 <script setup>
 import MainMenu from "./components/MainMenu.vue";
-import Container from "./components/Container.vue";
+import TwoColumnLayout from "@/layouts/two-column-layout.vue";
 </script>
 
 <style>

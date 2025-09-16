@@ -57,4 +57,11 @@ export const componentsRoutes = [
     category: ROUTE_CATEGORY.COMPONENTS,
     component: () => import("../views/custom-components/bulk-assign-tasks/index.vue"),
   },
+  {
+    path: "/loading-bar",
+    name: "LoadingBar",
+    displayName: "Loading Bar",
+    category: ROUTE_CATEGORY.COMPONENTS,
+    component: () => import("../views/custom-components/loading-bar/index.vue"),
+  },
 ];
