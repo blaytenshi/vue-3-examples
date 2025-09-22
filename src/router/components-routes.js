@@ -64,4 +64,11 @@ export const componentsRoutes = [
     category: ROUTE_CATEGORY.COMPONENTS,
     component: () => import("../views/custom-components/loading-bar/index.vue"),
   },
+  {
+    path: "/single-file-upload",
+    name: "SingleFileUpload",
+    displayName: "Single File Upload",
+    category: ROUTE_CATEGORY.COMPONENTS,
+    component: () => import("../views/custom-components/single-file-upload/index.vue"),
+  },
 ];
