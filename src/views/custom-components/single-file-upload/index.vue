@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from "vue";
-import Container from "@/components/container.vue";
+import Container from "@/components/Container.vue";
 import LoadingBar from "@/views/custom-components/loading-bar/loading-bar.vue";
 import axios from "axios";
 import { CONTAINER_DIRECTIONS } from "@/constants/options.js";
